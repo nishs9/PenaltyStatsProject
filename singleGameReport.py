@@ -328,6 +328,11 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 		distance = penalty[7][1]
 		scoreDifferential = 0
 
+		if down == 0:
+			down = 1
+		if distance == 0:
+			distance = 10
+
 		## figuring out who was in possession of the ball during the penalty
 		if penaltyType == "DHP":
 			if penalizedTeam == awayTeam:
@@ -569,9 +574,9 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	print("CSVified!")
 
 if __name__ == '__main__':
-	date = "20190908"
-	awayTeam = "ATL"
-	homeTeam = "MIN"
+	date = "20190915"
+	awayTeam = "PHI"
+	homeTeam = "ATL"
 
 	penaltyInfoTup = penaltyReport(date, awayTeam, homeTeam)
 	boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)

@@ -9,10 +9,10 @@ scheduleList = []
 
 try:
     response = requests.get(
-        url="https://api.mysportsfeeds.com/v2.1/pull/nfl/2015-regular/games.json",
+        url="https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games.json",
         params={
             "fordate": "20191001",
-            "team": "NE"
+            "team": "ATL"
         },
         headers={
             "Authorization": "Basic " + base64.b64encode('{}:{}'.format(config.api_key,config.api_secret).encode('utf-8')).decode('ascii')
