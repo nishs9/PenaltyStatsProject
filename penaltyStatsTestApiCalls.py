@@ -1,3 +1,4 @@
+import config
 import base64
 import requests
 import json
@@ -25,7 +26,7 @@ try:
             "playtype": "penalty"
         },
         headers={
-            "Authorization": "Basic " + base64.b64encode('{}:{}'.format('83298d15-107d-4444-a888-3523ba','MYSPORTSFEEDS').encode('utf-8')).decode('ascii')
+            "Authorization": "Basic " + base64.b64encode('{}:{}'.format(config.api_key,config.api_secret).encode('utf-8')).decode('ascii')
         }
     )
     print('Response HTTP Status Code: {status_code}'.format(
