@@ -1,0 +1,137 @@
+Boredom has got the best of me, so I decided to try something out. I
+was thinking about penalties in football and how we don't have a way
+of separating meaningful penalties from the meaningless (i.e. pass
+interference from false start). Therefore, I decided to create a
+little rudimentary metric that attempts to do just that. I call it
+Drive Prolonging Penalties (DPPs). In its current form it only is
+meant for defensive penalties as those can oftentimes decide games.
+With the DPP's criteria I created lots of other metrics with
+ludicrously long acronyms such as:
+
+PADtDPPs (Points Against Due to Drive Prolonging Penalties),
+
+PADtDPPs/TPA (Points Against Due to Drive Prolonging Penalties divided
+by Total Points Against),
+
+DPPP (Drive Prolonging Penalties Percentage),
+
+PADtDPPs/TDPPs (Points Against Due to Drive Prolonging Penalties
+divided by Total Drive Prolonging Penalties),
+
+etc.
+
+To begin, let me define a DPP. In its current form, a DPP is any
+penalty that: gives a team an automatic first down, totals more than
+15 yards, puts a team in the redzone (RZ), and puts a team in NRZFGR
+(Non-Redzone Field Goal Range (the opponent's 38-21 yard line)). While
+it is quite broad, it takes away all offensive penalties and many
+minor infractions on the defensive side. From there, I built it up and
+put it to some use. I began by creating DPPP (Drive Prolonging
+Penalties Percentage) which is calculated by dividing the number of
+DPPs with the number of total penalties. Then I created PADtDPPs
+(acronym expanded earlier). This is calculated by looking at whether
+the drive in which a DPP occurred resulted in a score (TD or FG,
+safeties don't count) and adding up what amount of points were gained.
+By dividing that number with the number of DPPs, you can get the
+average amount of points a team, effectively, gave up each time they
+committed a DPP. This statistic is known as PADtDPPs/TDPPs. From there
+I went further and looked at what percent of the opponent's points
+could be traced back to a DPP, and created PADtDPPs/TPA. This is
+calculated by taking the PADtDPPs and dividing it by the total points
+scored by the opponent.
+
+Now all of this looked great on paper, but I hadn't really applied it.
+So I did just that. I decided to use these metrics to analyze the
+entire 2012 regular season for the New England Patriots. I spent about
+3-4 hours gathering the necessary data. I took out my old math
+notebook and recorded the data the old fashioned way, by hand. For
+each week of play, I recorded the match-up, result (W or L), score,
+total penalties, total DPPs, documented exactly what the DPP was (type
+of foul, amount of yards, the down and distance before and after, and
+the result at the end of the drive), and the rest of the metrics I
+created. I got the info using ESPN's Box Score and Play-By-Play
+transcripts.
+
+After recording the data for all 16 weeks, I started to try to make
+sense of the data. Here is some of what I found:
+
+Entire Season:
+
+The Patriots committed 97 penalties which came out to about 6.06
+penalties/game. They committed 31 DPPs (1.94 /game). The ratio of DPPs
+to penalties came out to about 1 DPP for every 3 total penalties
+(31.96%).
+
+At the end of the season, the Patriots had surrendered 331 points to
+opponents (roughly 20.69 per game). As far as PADtDPPs, they
+surrendered 109 (coming out to 6.81 points or roughly one touchdown
+per game). Their PADtDPPs/TPA was 32.93%. I also went ahead and added
+up the PADtDPPs/TPA from each game and averaged those as well. That
+told me that for every game played, roughly 29.06% of the points
+against were due to DPPs.
+
+While I was proud that my metric actually worked and made some sense,
+I went deeper. If you remember, the Pats went 3-3 during the first 6
+games (they lost to the Cardinals, Ravens, and Seahawks). I decided to
+analyze that specific time frame and see what I could find.
+
+Weeks 1-6:
+
+In the first 6 weeks of the season. the Patriots surrendered 34
+penalties (roughly a third of their season total about a third of the
+way into the season). This was nothing fascinating. The average
+penalties per game came out to 5.66 which was 0.40 less than that of
+the season average. The number of DPPs (11) and average per game
+(1.83) also seemed pretty much the norm. However, it got interesting a
+little bit later. In these 6 weeks the Pats surrendered 137 points
+(40% of the season total). This meant that they were allowing 22.83
+points/game which is 2.14 points more than the season average. Moving
+on to PADtDPPs, they surrendered 51 points (8.5 points per game or one
+TD and 1/2 of a FG). The total PADtDPPs/TPA was 37.22% (almost 5% more
+than the season) and the average PADtDPPs/TPA was 36.66% (7.6% over
+the season average).
+
+While this did show that there was an increase in penalties
+(specifically DPPs), it wasn't quite as definitive as I was expecting.
+I looked back at my original data and saw that, mixed in with the
+losses were games in which there were few DPPs. Thus throwing off my
+final statistics. I decided to narrow my criteria and only analyzed
+the three losses, and what I found was a big difference that proved
+that DPPs were a factor in their losses. Here is that info:
+
+First 3 Losses:
+
+In these three weeks, the Patriots committed 24 penalties! This comes
+out to 8 penalties a game (nearly 2.5 penalties more than the 6 week
+average and 2 more than the season average). They committed 8 DPPs
+(2.66 per game, almost 1 DPP more than the total 6 weeks). The DPPP
+was 33% (this was one stat that didn't change). The Pats allowed 75
+points against (25 per game, which was up by 2 points from the 6 week
+average). It is here where we see the true effect of the DPP. The 6
+week average of PADtDPPs was 51 points, 38 of those came in their
+three losses. The average PADtDPPs was 12.66 (4.16 above the 6 week
+average and twice as much as the season average). In fact, the total
+PADtDPPs/TPA was 50.66%. The average PADtDPPs/TPA was 47%. This tells
+us that nearly 50% of the opponent's points were due to DPPs.
+
+As you can see, taking away the 3 wins helped with showing the effect
+of DPPs on their games. In fact, one game in particular showed this
+and that was Week 3 against the Ravens (Loss 31-30).
+
+Stats from Week 3:
+
+Total Penalties: 10
+
+DPPs: 5 (3 Defensive Holding, 2 Pass Interference)
+
+DPPP: 50%
+
+PADtDPPs: 24
+
+Points Given up per DPP: 4.8
+
+PADtDPPs/TPA: 0.77 (I expressed them as decimals in my notebook)
+
+This shows that only one TD was scored without the help of DPPs.
+
+Tell me what you think!
