@@ -7,9 +7,9 @@ import csv
 ## https://www.espn.com/nfl/scoreboard/_/year/2019/seasontype/2/week/8 
 ## the page above has games that occured on 10-27-2019 that will be useful for easy testing
 
-date = "20190908"
-awayTeam = "ATL"
-homeTeam = "MIN"
+date = "20190929"
+awayTeam = "TEN"
+homeTeam = "ATL"
 
 gameParam = date + "-" + awayTeam + "-" + homeTeam
 
@@ -184,7 +184,9 @@ try:
 
                 ##field position tuple (side of field, yard line)
                 preFieldPos = [sideOfField, yardLine]
-                enforcedFieldPos = [penalty["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], penalty["penalty"]["enforcedAtPosition"]["yardLine"]]
+                enforcedFieldPos = preFieldPos
+                if penalty["penalty"]["enforcedAtPosition"] != None:
+                    enforcedFieldPos = [penalty["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], penalty["penalty"]["enforcedAtPosition"]["yardLine"]]
                 postFieldPos = [sideOfField, yardLine]
 
                 if penalizedTeam == teamInPoss:

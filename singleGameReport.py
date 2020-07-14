@@ -183,7 +183,9 @@ def penaltyReport(date, awayTeam, homeTeam):
 
 					##field position tuple (side of field, yard line)
 					preFieldPos = [sideOfField, yardLine]
-					enforcedFieldPos = [penalty["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], penalty["penalty"]["enforcedAtPosition"]["yardLine"]]
+					enforcedFieldPos = preFieldPos
+					if penalty["penalty"]["enforcedAtPosition"] != None:
+						enforcedFieldPos = [penalty["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], penalty["penalty"]["enforcedAtPosition"]["yardLine"]]
 					postFieldPos = [sideOfField, yardLine]
 
 					## offensive penalty (DHP)
@@ -574,9 +576,9 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	print("CSVified!")
 
 if __name__ == '__main__':
-	date = "20190915"
-	awayTeam = "PHI"
-	homeTeam = "ATL"
+	date = "20191229"
+	awayTeam = "ATL"
+	homeTeam = "TB"
 
 	penaltyInfoTup = penaltyReport(date, awayTeam, homeTeam)
 	boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
