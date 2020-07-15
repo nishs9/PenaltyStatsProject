@@ -7,9 +7,9 @@ import csv
 ## https://www.espn.com/nfl/scoreboard/_/year/2019/seasontype/2/week/8 
 ## the page above has games that occured on 10-27-2019 that will be useful for easy testing
 
-date = "20190929"
-awayTeam = "TEN"
-homeTeam = "ATL"
+date = "20191110"
+awayTeam = "ARI"
+homeTeam = "TB"
 
 gameParam = date + "-" + awayTeam + "-" + homeTeam
 
@@ -163,7 +163,9 @@ try:
                 teamInPoss = play["playStatus"]["teamInPossession"]["abbreviation"]
                 yards = penalty["penalty"]["yardsPenalized"]
 
-                if playType != "sack":
+                edgeCase = ["sack", "fieldGoalAttempt"]
+
+                if playType not in edgeCase:
                     if yards == 0 or play[playType]["isTwoPointConversion"] == True:
                         continue
                 elif yards == 0:
@@ -172,12 +174,22 @@ try:
                 down = play["playStatus"]["currentDown"]
                 yardsToGo = play["playStatus"]["yardsRemaining"]
 
+                if down == None:
+                    down = 1
+                    yardsToGo = 10
+
                 quarter = play["playStatus"]["quarter"]
                 gameClock = 900 - play["playStatus"]["secondsElapsed"]
                 time = (quarter, gameClock)
 
-                sideOfField = play["playStatus"]["lineOfScrimmage"]["team"]["abbreviation"]
-                yardLine = play["playStatus"]["lineOfScrimmage"]["yardLine"]
+                sideOfField = ""
+                yardLine = 9999
+                if playType == "fieldGoalAttempt":
+                    sideOfField = play[playType]["kickedFromPosition"]["team"]["abbreviation"]
+                    yardLine = play[playType]["kickedFromPosition"]["yardLine"]
+                else:
+                    sideOfField = play["playStatus"]["lineOfScrimmage"]["team"]["abbreviation"]
+                    yardLine = play["playStatus"]["lineOfScrimmage"]["yardLine"]
 
                 ##down and distance
                 downAndDistance =  (down, yardsToGo)

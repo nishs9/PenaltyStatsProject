@@ -161,8 +161,10 @@ def penaltyReport(date, awayTeam, homeTeam):
 					teamInPoss = play["playStatus"]["teamInPossession"]["abbreviation"]
 					yards = penalty["penalty"]["yardsPenalized"]
 
+					edgeCase = ["sack", "fieldGoalAttempt"]
+
 					#checks for a 2pt conversion or declined penalty
-					if playType != "sack":
+					if playType not in edgeCase:
 						if yards == 0 or play[playType]["isTwoPointConversion"] == True:
 							continue
 					elif yards == 0:
@@ -172,12 +174,22 @@ def penaltyReport(date, awayTeam, homeTeam):
 					down = play["playStatus"]["currentDown"]
 					yardsToGo = play["playStatus"]["yardsRemaining"]
 
+					if down == None:
+						down = 1
+						yardsToGo = 10
+
 					quarter = play["playStatus"]["quarter"]
 					gameClock = 900 - play["playStatus"]["secondsElapsed"]
 					time = (quarter, gameClock)
 
-					sideOfField = play["playStatus"]["lineOfScrimmage"]["team"]["abbreviation"]
-					yardLine = play["playStatus"]["lineOfScrimmage"]["yardLine"]
+					sideOfField = ""
+					yardLine = 9999
+					if playType == "fieldGoalAttempt":
+						sideOfField = play[playType]["kickedFromPosition"]["team"]["abbreviation"]
+						yardLine = play[playType]["kickedFromPosition"]["yardLine"]
+					else:
+						sideOfField = play["playStatus"]["lineOfScrimmage"]["team"]["abbreviation"]
+						yardLine = play["playStatus"]["lineOfScrimmage"]["yardLine"]
 
 					##down and distance
 					downAndDistance =  (down, yardsToGo)
@@ -604,3 +616,5 @@ if __name__ == '__main__':
 
 	for expPoint in expPointReport:
 		print(expPoint)
+
+	sg.popup("Script finished successfully")
