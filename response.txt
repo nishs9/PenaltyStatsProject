@@ -1,855 +1,22 @@
 [
     {
-        "description": "(10:37) (Shotgun) J.Winston pass short middle to M.Evans to TB 48 for 10 yards (H.Reddick). PENALTY on TB-D.Smith, Illegal Use of Hands, 10 yards, enforced at TB 38 - No Play.",
-        "pass": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
-                "position": "QB",
-                "jerseyNumber": 3
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 8562,
-                "firstName": "Mike",
-                "lastName": "Evans",
-                "position": "WR",
-                "jerseyNumber": 13
-            },
-            "receivedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 48,
-                "point": null
-            },
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": {
-                "id": 12688,
-                "firstName": "Haason",
-                "lastName": "Reddick",
-                "position": "LB",
-                "jerseyNumber": 43
-            },
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 48,
-                "point": null
-            },
-            "isCompleted": true,
-            "isOutOfBounds": false,
-            "isTackled": true,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsPassed": 10,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 10,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 6176,
-                            "firstName": "Donovan",
-                            "lastName": "Smith",
-                            "position": "LB",
-                            "jerseyNumber": 76
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 71,
-                                "abbreviation": "TB"
-                            },
-                            "yardLine": 38,
-                            "point": null
-                        },
-                        "description": "Illegal Use of Hands",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 10
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 1,
-            "secondsElapsed": 263,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 2,
-            "yardsRemaining": 12,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 12688,
-                        "firstName": "Haason",
-                        "lastName": "Reddick",
-                        "position": "LB",
-                        "jerseyNumber": 43
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 8562,
-                        "firstName": "Mike",
-                        "lastName": "Evans",
-                        "position": "WR",
-                        "jerseyNumber": 13
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(7:35) (Shotgun) J.Winston sacked at TB 48 for -8 yards (sack split by J.Hicks and J.Bullard). PENALTY on ARI-P.Peterson, Defensive Holding, 5 yards, enforced at ARI 44 - No Play.",
-        "sack": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
-                "position": "QB",
-                "jerseyNumber": 3
-            },
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": {
-                "id": 8070,
-                "firstName": "Jordan",
-                "lastName": "Hicks",
-                "position": "LB",
-                "jerseyNumber": 58
-            },
-            "assistedTacklingPlayer2": {
-                "id": 9784,
-                "firstName": "Jonathan",
-                "lastName": "Bullard",
-                "position": "DE",
-                "jerseyNumber": 90
-            },
-            "sackedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 48,
-                "point": null
-            },
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsLost": 8,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 76,
-                            "abbreviation": "ARI"
-                        },
-                        "penalizedPlayer": {
-                            "id": 6007,
-                            "firstName": "Patrick",
-                            "lastName": "Peterson",
-                            "position": "CB",
-                            "jerseyNumber": 21
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 44,
-                            "point": null
-                        },
-                        "description": "Defensive Holding",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 5
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 1,
-            "secondsElapsed": 445,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 3,
-            "yardsRemaining": 6,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 44
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 8070,
-                        "firstName": "Jordan",
-                        "lastName": "Hicks",
-                        "position": "LB",
-                        "jerseyNumber": 58
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 9784,
-                        "firstName": "Jonathan",
-                        "lastName": "Bullard",
-                        "position": "DE",
-                        "jerseyNumber": 90
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(6:03) P.Barber up the middle to ARI 27 for no gain (Z.Kerr). PENALTY on TB, Illegal Formation, 5 yards, enforced at ARI 27 - No Play.",
-        "rush": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "rushingPlayer": {
-                "id": 10068,
-                "firstName": "Peyton",
-                "lastName": "Barber",
-                "position": "RB",
-                "jerseyNumber": 25
-            },
-            "rushedFromPosition": null,
-            "soloTacklingPlayer": {
-                "id": 7142,
-                "firstName": "Zach",
-                "lastName": "Kerr",
-                "position": "DE",
-                "jerseyNumber": 92
-            },
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 27,
-                "point": null
-            },
-            "rushType": null,
-            "rushDirection": null,
-            "isOutOfBounds": false,
-            "isTackled": true,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsRushed": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": null,
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 27,
-                            "point": null
-                        },
-                        "description": "Illegal Formation",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 5
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 1,
-            "secondsElapsed": 537,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 27
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 7142,
-                        "firstName": "Zach",
-                        "lastName": "Kerr",
-                        "position": "DE",
-                        "jerseyNumber": 92
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 10068,
-                        "firstName": "Peyton",
-                        "lastName": "Barber",
-                        "position": "RB",
-                        "jerseyNumber": 25
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "False Start",
-        "penalty": {
-            "penalty": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "penalizedPlayer": {
-                    "id": 5972,
-                    "firstName": "D.J.",
-                    "lastName": "Humphries",
-                    "position": "OT",
-                    "jerseyNumber": 74
-                },
-                "enforcedAtPosition": {
-                    "team": {
-                        "id": 71,
-                        "abbreviation": "TB"
-                    },
-                    "yardLine": 31,
-                    "point": null
-                },
-                "description": "False Start",
-                "isCancelsPlay": true,
-                "yardsPenalized": 5
-            },
-            "isFirstDownPenalty": false,
-            "isNoPlay": true
-        },
-        "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 0,
-            "teamInPossession": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 3,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 31
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 5972,
-                        "firstName": "D.J.",
-                        "lastName": "Humphries",
-                        "position": "OT",
-                        "jerseyNumber": 74
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": []
-        }
-    },
-    {
-        "description": "False Start",
-        "penalty": {
-            "penalty": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "penalizedPlayer": {
-                    "id": 7779,
-                    "firstName": "Justin",
-                    "lastName": "Pugh",
-                    "position": "G",
-                    "jerseyNumber": 67
-                },
-                "enforcedAtPosition": {
-                    "team": {
-                        "id": 71,
-                        "abbreviation": "TB"
-                    },
-                    "yardLine": 36,
-                    "point": null
-                },
-                "description": "False Start",
-                "isCancelsPlay": true,
-                "yardsPenalized": 5
-            },
-            "isFirstDownPenalty": false,
-            "isNoPlay": true
-        },
-        "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 0,
-            "teamInPossession": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 3,
-            "yardsRemaining": 15,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 36
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 7779,
-                        "firstName": "Justin",
-                        "lastName": "Pugh",
-                        "position": "G",
-                        "jerseyNumber": 67
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": []
-        }
-    },
-    {
-        "description": "(10:16) P.Barber left guard to ARI 26 for 1 yard (Cha.Jones). PENALTY on ARI-Cha.Jones, Unnecessary Roughness, 13 yards, enforced at ARI 26.",
-        "rush": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "rushingPlayer": {
-                "id": 10068,
-                "firstName": "Peyton",
-                "lastName": "Barber",
-                "position": "RB",
-                "jerseyNumber": 25
-            },
-            "rushedFromPosition": null,
-            "soloTacklingPlayer": {
-                "id": 7597,
-                "firstName": "Chandler",
-                "lastName": "Jones",
-                "position": "LB",
-                "jerseyNumber": 55
-            },
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 26,
-                "point": null
-            },
-            "rushType": null,
-            "rushDirection": null,
-            "isOutOfBounds": false,
-            "isTackled": true,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": false,
-            "yardsRushed": 1,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 76,
-                            "abbreviation": "ARI"
-                        },
-                        "penalizedPlayer": {
-                            "id": 7597,
-                            "firstName": "Chandler",
-                            "lastName": "Jones",
-                            "position": "LB",
-                            "jerseyNumber": 55
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 26,
-                            "point": null
-                        },
-                        "description": "Unnecessary Roughness",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 13
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 284,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 2,
-            "yardsRemaining": 5,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 27
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 7597,
-                        "firstName": "Chandler",
-                        "lastName": "Jones",
-                        "position": "LB",
-                        "jerseyNumber": 55
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 10068,
-                        "firstName": "Peyton",
-                        "lastName": "Barber",
-                        "position": "RB",
-                        "jerseyNumber": 25
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(9:49) J.Winston pass incomplete short left. PENALTY on TB-J.Winston, Intentional Grounding, 10 yards, enforced at ARI 13.",
-        "pass": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
-                "position": "QB",
-                "jerseyNumber": 3
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": null,
-            "receivedAtPosition": null,
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": null,
-            "isCompleted": false,
-            "isOutOfBounds": false,
-            "isTackled": false,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": true,
-            "isNoPlay": false,
-            "yardsPassed": 0,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 8550,
-                            "firstName": "Jameis",
-                            "lastName": "Winston",
-                            "position": "QB",
-                            "jerseyNumber": 3
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 13,
-                            "point": null
-                        },
-                        "description": "Intentional Grounding",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 10
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 311,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 13
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(4:26) B.Pinion punts 48 yards to ARI 8, Center-Z.Triner, out of bounds. PENALTY on ARI-D.Daniels, Offensive Holding, 4 yards, enforced at ARI 8.",
-        "punt": {
-            "kickingTeam": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "kickingPlayer": {
-                "id": 8461,
-                "firstName": "Bradley",
-                "lastName": "Pinion",
-                "position": "P",
-                "jerseyNumber": 8
-            },
-            "kickedFromPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 44,
-                "point": null
-            },
-            "blockingPlayer": null,
-            "retrievingTeam": null,
-            "retrievingPlayer": null,
-            "retrievedAtPosition": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 8,
-                "point": null
-            },
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "stoppedAtPosition": null,
-            "isBlocked": false,
-            "isTouchback": false,
-            "isSafety": false,
-            "isOutOfBounds": false,
-            "isTouchdown": false,
-            "isFairCatch": false,
-            "isLanded": false,
-            "isOnside": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": false,
-            "yardsKicked": 48,
-            "yardsReturned": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 76,
-                            "abbreviation": "ARI"
-                        },
-                        "penalizedPlayer": {
-                            "id": 13030,
-                            "firstName": "Darrell",
-                            "lastName": "Daniels",
-                            "position": "TE",
-                            "jerseyNumber": 81
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 8,
-                            "point": null
-                        },
-                        "description": "Offensive Holding",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 4
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 634,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 4,
-            "yardsRemaining": 5,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 44
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8461,
-                        "firstName": "Bradley",
-                        "lastName": "Pinion",
-                        "position": "P",
-                        "jerseyNumber": 8
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "B.Pinion kicks 73 yards from TB 35 to ARI -8. P.Cooper to ARI 28 for 36 yards (J.Watson). PENALTY on ARI-T.Sherfield, Offensive Holding, 7 yards, enforced at ARI 14.",
+        "description": "C.Boswell kicks 64 yards from PIT 35 to ARI 1. P.Cooper ran ob at ARI 34 for 33 yards (M.Hilton). PENALTY on ARI-C.Washington, Offensive Holding, 10 yards, enforced at ARI 33.",
         "kick": {
             "kickingTeam": {
-                "id": 71,
-                "abbreviation": "TB"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "kickingPlayer": {
-                "id": 8461,
-                "firstName": "Bradley",
-                "lastName": "Pinion",
-                "position": "P",
-                "jerseyNumber": 8
+                "id": 7821,
+                "firstName": "Chris",
+                "lastName": "Boswell",
+                "position": "K",
+                "jerseyNumber": 9
             },
             "kickedFromPosition": {
                 "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
+                    "id": 59,
+                    "abbreviation": "PIT"
                 },
                 "yardLine": 35,
                 "point": null
@@ -871,15 +38,15 @@
                     "id": 76,
                     "abbreviation": "ARI"
                 },
-                "yardLine": -8,
+                "yardLine": 1,
                 "point": null
             },
             "soloTacklingPlayer": {
-                "id": 14734,
-                "firstName": "Justin",
-                "lastName": "Watson",
-                "position": "WR",
-                "jerseyNumber": 17
+                "id": 13195,
+                "firstName": "Mike",
+                "lastName": "Hilton",
+                "position": "CB",
+                "jerseyNumber": 28
             },
             "assistedTacklingPlayer1": null,
             "assistedTacklingPlayer2": null,
@@ -888,21 +55,21 @@
                     "id": 76,
                     "abbreviation": "ARI"
                 },
-                "yardLine": 28,
+                "yardLine": 34,
                 "point": null
             },
             "isBlocked": false,
             "isTouchback": false,
             "isSafety": false,
-            "isOutOfBounds": false,
+            "isOutOfBounds": true,
             "isTouchdown": false,
             "isFairCatch": false,
             "isLanded": false,
             "isOnside": false,
             "isFirstDownPenalty": false,
             "isNoPlay": false,
-            "yardsKicked": 73,
-            "yardsReturned": 36,
+            "yardsKicked": 64,
+            "yardsReturned": 33,
             "subPlays": [],
             "penalties": [
                 {
@@ -912,33 +79,33 @@
                             "abbreviation": "ARI"
                         },
                         "penalizedPlayer": {
-                            "id": 14798,
-                            "firstName": "Trent",
-                            "lastName": "Sherfield",
-                            "position": "WR",
-                            "jerseyNumber": 16
+                            "id": 12961,
+                            "firstName": "Charles",
+                            "lastName": "Washington",
+                            "position": "FS",
+                            "jerseyNumber": 45
                         },
                         "enforcedAtPosition": {
                             "team": {
                                 "id": 76,
                                 "abbreviation": "ARI"
                             },
-                            "yardLine": 14,
+                            "yardLine": 33,
                             "point": null
                         },
                         "description": "Offensive Holding",
                         "isCancelsPlay": false,
-                        "yardsPenalized": 7
+                        "yardsPenalized": 10
                     }
                 }
             ]
         },
         "playStatus": {
-            "quarter": 2,
-            "secondsElapsed": 892,
+            "quarter": 1,
+            "secondsElapsed": 0,
             "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "overallDriveNum": null,
             "teamDriveNum": null,
@@ -946,12 +113,24 @@
             "yardsRemaining": 0,
             "lineOfScrimmage": {
                 "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
+                    "id": 59,
+                    "abbreviation": "PIT"
                 },
                 "yardLine": 35
             },
             "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 7821,
+                        "firstName": "Chris",
+                        "lastName": "Boswell",
+                        "position": "K",
+                        "jerseyNumber": 9
+                    },
+                    "position": null
+                }
+            ],
+            "homePlayersOnField": [
                 {
                     "player": {
                         "id": 9691,
@@ -964,11 +143,146 @@
                 },
                 {
                     "player": {
-                        "id": 14734,
-                        "firstName": "Justin",
-                        "lastName": "Watson",
-                        "position": "WR",
-                        "jerseyNumber": 17
+                        "id": 13195,
+                        "firstName": "Mike",
+                        "lastName": "Hilton",
+                        "position": "CB",
+                        "jerseyNumber": 28
+                    },
+                    "position": null
+                }
+            ]
+        }
+    },
+    {
+        "description": "(8:59) (Shotgun) D.Hodges pass short right to Tr.Edmunds to ARI 46 for 7 yards (J.Walker). PENALTY on ARI-J.Hicks, Unnecessary Roughness, 15 yards, enforced at ARI 46.",
+        "pass": {
+            "team": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "passingPlayer": {
+                "id": 16845,
+                "firstName": "Devlin",
+                "lastName": "Hodges",
+                "position": "QB",
+                "jerseyNumber": 6
+            },
+            "passedFromPosition": null,
+            "receivingPlayer": {
+                "id": 13249,
+                "firstName": "Trey",
+                "lastName": "Edmunds",
+                "position": "RB",
+                "jerseyNumber": 33
+            },
+            "receivedAtPosition": {
+                "team": {
+                    "id": 59,
+                    "abbreviation": "PIT"
+                },
+                "yardLine": 50,
+                "point": null
+            },
+            "interceptingPlayer": null,
+            "interceptedAtPosition": null,
+            "soloTacklingPlayer": {
+                "id": 9711,
+                "firstName": "Joe",
+                "lastName": "Walker",
+                "position": "ILB",
+                "jerseyNumber": 59
+            },
+            "assistedTacklingPlayer1": null,
+            "assistedTacklingPlayer2": null,
+            "passType": null,
+            "passDirection": null,
+            "passDistance": null,
+            "stoppedAtPosition": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 46,
+                "point": null
+            },
+            "isCompleted": true,
+            "isOutOfBounds": false,
+            "isTackled": true,
+            "isEndedWithTouchdown": false,
+            "isTwoPointConversion": false,
+            "isFirstDownPenalty": false,
+            "isNoPlay": false,
+            "yardsPassed": 3,
+            "yardsRushed": 4,
+            "yardsIntercepted": 0,
+            "totalYardsGained": 7,
+            "subPlays": [],
+            "penalties": [
+                {
+                    "penalty": {
+                        "team": {
+                            "id": 76,
+                            "abbreviation": "ARI"
+                        },
+                        "penalizedPlayer": {
+                            "id": 8070,
+                            "firstName": "Jordan",
+                            "lastName": "Hicks",
+                            "position": "LB",
+                            "jerseyNumber": 58
+                        },
+                        "enforcedAtPosition": {
+                            "team": {
+                                "id": 76,
+                                "abbreviation": "ARI"
+                            },
+                            "yardLine": 46,
+                            "point": null
+                        },
+                        "description": "Unnecessary Roughness",
+                        "isCancelsPlay": false,
+                        "yardsPenalized": 15
+                    }
+                }
+            ]
+        },
+        "playStatus": {
+            "quarter": 1,
+            "secondsElapsed": 361,
+            "teamInPossession": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 3,
+            "yardsRemaining": 13,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 59,
+                    "abbreviation": "PIT"
+                },
+                "yardLine": 47
+            },
+            "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 16845,
+                        "firstName": "Devlin",
+                        "lastName": "Hodges",
+                        "position": "QB",
+                        "jerseyNumber": 6
+                    },
+                    "position": null
+                },
+                {
+                    "player": {
+                        "id": 13249,
+                        "firstName": "Trey",
+                        "lastName": "Edmunds",
+                        "position": "RB",
+                        "jerseyNumber": 33
                     },
                     "position": null
                 }
@@ -976,11 +290,189 @@
             "homePlayersOnField": [
                 {
                     "player": {
-                        "id": 8461,
-                        "firstName": "Bradley",
-                        "lastName": "Pinion",
-                        "position": "P",
-                        "jerseyNumber": 8
+                        "id": 9711,
+                        "firstName": "Joe",
+                        "lastName": "Walker",
+                        "position": "ILB",
+                        "jerseyNumber": 59
+                    },
+                    "position": null
+                }
+            ]
+        }
+    },
+    {
+        "description": "(3:35) (Shotgun) K.Murray scrambles up the middle to ARI 23 for 3 yards (J.Hargrave). PENALTY on PIT-B.Dupree, Defensive Offside, 5 yards, enforced at ARI 20 - No Play.",
+        "rush": {
+            "team": {
+                "id": 76,
+                "abbreviation": "ARI"
+            },
+            "rushingPlayer": {
+                "id": 16226,
+                "firstName": "Kyler",
+                "lastName": "Murray",
+                "position": "QB",
+                "jerseyNumber": 1
+            },
+            "rushedFromPosition": null,
+            "soloTacklingPlayer": {
+                "id": 9993,
+                "firstName": "Javon",
+                "lastName": "Hargrave",
+                "position": "NT",
+                "jerseyNumber": 79
+            },
+            "assistedTacklingPlayer1": null,
+            "assistedTacklingPlayer2": null,
+            "stoppedAtPosition": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 23,
+                "point": null
+            },
+            "rushType": null,
+            "rushDirection": null,
+            "isOutOfBounds": false,
+            "isTackled": true,
+            "isEndedWithTouchdown": false,
+            "isTwoPointConversion": false,
+            "isFirstDownPenalty": false,
+            "isNoPlay": true,
+            "yardsRushed": 3,
+            "subPlays": [],
+            "penalties": [
+                {
+                    "penalty": {
+                        "team": {
+                            "id": 59,
+                            "abbreviation": "PIT"
+                        },
+                        "penalizedPlayer": {
+                            "id": 8153,
+                            "firstName": "Bud",
+                            "lastName": "Dupree",
+                            "position": "LB",
+                            "jerseyNumber": 48
+                        },
+                        "enforcedAtPosition": {
+                            "team": {
+                                "id": 76,
+                                "abbreviation": "ARI"
+                            },
+                            "yardLine": 20,
+                            "point": null
+                        },
+                        "description": "Defensive Offside",
+                        "isCancelsPlay": true,
+                        "yardsPenalized": 5
+                    }
+                }
+            ]
+        },
+        "playStatus": {
+            "quarter": 1,
+            "secondsElapsed": 685,
+            "teamInPossession": {
+                "id": 76,
+                "abbreviation": "ARI"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 3,
+            "yardsRemaining": 10,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 20
+            },
+            "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 9993,
+                        "firstName": "Javon",
+                        "lastName": "Hargrave",
+                        "position": "NT",
+                        "jerseyNumber": 79
+                    },
+                    "position": null
+                }
+            ],
+            "homePlayersOnField": [
+                {
+                    "player": {
+                        "id": 16226,
+                        "firstName": "Kyler",
+                        "lastName": "Murray",
+                        "position": "QB",
+                        "jerseyNumber": 1
+                    },
+                    "position": null
+                }
+            ]
+        }
+    },
+    {
+        "description": "False Start",
+        "penalty": {
+            "penalty": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "penalizedPlayer": {
+                    "id": 6140,
+                    "firstName": "Maxx",
+                    "lastName": "Williams",
+                    "position": "TE",
+                    "jerseyNumber": 87
+                },
+                "enforcedAtPosition": {
+                    "team": {
+                        "id": 76,
+                        "abbreviation": "ARI"
+                    },
+                    "yardLine": 18,
+                    "point": null
+                },
+                "description": "False Start",
+                "isCancelsPlay": true,
+                "yardsPenalized": 5
+            },
+            "isFirstDownPenalty": false,
+            "isNoPlay": true
+        },
+        "playStatus": {
+            "quarter": 1,
+            "secondsElapsed": 835,
+            "teamInPossession": {
+                "id": 76,
+                "abbreviation": "ARI"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 4,
+            "yardsRemaining": 10,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 18
+            },
+            "awayPlayersOnField": [],
+            "homePlayersOnField": [
+                {
+                    "player": {
+                        "id": 6140,
+                        "firstName": "Maxx",
+                        "lastName": "Williams",
+                        "position": "TE",
+                        "jerseyNumber": 87
                     },
                     "position": null
                 }
@@ -1004,10 +496,10 @@
                 },
                 "enforcedAtPosition": {
                     "team": {
-                        "id": 76,
-                        "abbreviation": "ARI"
+                        "id": 59,
+                        "abbreviation": "PIT"
                     },
-                    "yardLine": 18,
+                    "yardLine": 47,
                     "point": null
                 },
                 "description": "False Start",
@@ -1019,23 +511,24 @@
         },
         "playStatus": {
             "quarter": 3,
-            "secondsElapsed": 4,
+            "secondsElapsed": 258,
             "teamInPossession": {
                 "id": 76,
                 "abbreviation": "ARI"
             },
             "overallDriveNum": null,
             "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
+            "currentDown": 2,
+            "yardsRemaining": 7,
             "lineOfScrimmage": {
                 "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
+                    "id": 59,
+                    "abbreviation": "PIT"
                 },
-                "yardLine": 18
+                "yardLine": 47
             },
-            "awayPlayersOnField": [
+            "awayPlayersOnField": [],
+            "homePlayersOnField": [
                 {
                     "player": {
                         "id": 7779,
@@ -1046,497 +539,162 @@
                     },
                     "position": null
                 }
-            ],
-            "homePlayersOnField": []
+            ]
         }
     },
     {
-        "description": "(6:15) (Shotgun) J.Winston pass short left to C.Godwin to ARI 33 for 29 yards (J.Thompson). PENALTY on TB-B.Perriman, Offensive Holding, 10 yards, enforced at TB 40.",
-        "pass": {
+        "description": "(9:01) (Shotgun) K.Murray Aborted. A.Shipley FUMBLES at PIT 40, recovered by ARI-K.Murray at PIT 43. K.Murray pass incomplete short right. PENALTY on PIT-T.Alualu, Defensive Holding, 5 yards, enforced at PIT 36 - No Play.",
+        "rush": {
             "team": {
-                "id": 71,
-                "abbreviation": "TB"
+                "id": 76,
+                "abbreviation": "ARI"
             },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
+            "rushingPlayer": {
+                "id": 16226,
+                "firstName": "Kyler",
+                "lastName": "Murray",
                 "position": "QB",
-                "jerseyNumber": 3
+                "jerseyNumber": 1
             },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 13493,
-                "firstName": "Chris",
-                "lastName": "Godwin",
-                "position": "WR",
-                "jerseyNumber": 12
-            },
-            "receivedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38,
-                "point": null
-            },
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": {
-                "id": 17072,
-                "firstName": "Jalen",
-                "lastName": "Thompson",
-                "position": "FS",
-                "jerseyNumber": 34
-            },
+            "rushedFromPosition": null,
+            "soloTacklingPlayer": null,
             "assistedTacklingPlayer1": null,
             "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 33,
-                "point": null
-            },
-            "isCompleted": true,
+            "stoppedAtPosition": null,
+            "rushType": null,
+            "rushDirection": null,
             "isOutOfBounds": false,
-            "isTackled": true,
+            "isTackled": false,
             "isEndedWithTouchdown": false,
             "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": false,
-            "yardsPassed": 0,
-            "yardsRushed": 29,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 29,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 6130,
-                            "firstName": "Breshad",
-                            "lastName": "Perriman",
-                            "position": "WR",
-                            "jerseyNumber": 19
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 71,
-                                "abbreviation": "TB"
-                            },
-                            "yardLine": 40,
-                            "point": null
-                        },
-                        "description": "Offensive Holding",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 10
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 3,
-            "secondsElapsed": 525,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 2,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 17072,
-                        "firstName": "Jalen",
-                        "lastName": "Thompson",
-                        "position": "FS",
-                        "jerseyNumber": 34
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 13493,
-                        "firstName": "Chris",
-                        "lastName": "Godwin",
-                        "position": "WR",
-                        "jerseyNumber": 12
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(2:43) (Shotgun) J.Winston pass short right to P.Barber to TB 15 for 7 yards (B.Murphy Jr.). PENALTY on TB-O.Howard, Offensive Holding, 6 yards, enforced at TB 12.",
-        "pass": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
-                "position": "QB",
-                "jerseyNumber": 3
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 10068,
-                "firstName": "Peyton",
-                "lastName": "Barber",
-                "position": "RB",
-                "jerseyNumber": 25
-            },
-            "receivedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 8,
-                "point": null
-            },
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": {
-                "id": 16207,
-                "firstName": "Byron",
-                "lastName": "Murphy",
-                "position": "CB",
-                "jerseyNumber": 33
-            },
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 15,
-                "point": null
-            },
-            "isCompleted": true,
-            "isOutOfBounds": false,
-            "isTackled": true,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": false,
-            "yardsPassed": 0,
-            "yardsRushed": 7,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 7,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 13491,
-                            "firstName": "O.J.",
-                            "lastName": "Howard",
-                            "position": "TE",
-                            "jerseyNumber": 80
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 71,
-                                "abbreviation": "TB"
-                            },
-                            "yardLine": 12,
-                            "point": null
-                        },
-                        "description": "Offensive Holding",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 6
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 3,
-            "secondsElapsed": 737,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 2,
-            "yardsRemaining": 13,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 8
-            },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 16207,
-                        "firstName": "Byron",
-                        "lastName": "Murphy",
-                        "position": "CB",
-                        "jerseyNumber": 33
-                    },
-                    "position": null
-                }
-            ],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 10068,
-                        "firstName": "Peyton",
-                        "lastName": "Barber",
-                        "position": "RB",
-                        "jerseyNumber": 25
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "False Start",
-        "penalty": {
-            "penalty": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "penalizedPlayer": {
-                    "id": 6141,
-                    "firstName": "Ryan",
-                    "lastName": "Jensen",
-                    "position": "C",
-                    "jerseyNumber": 66
-                },
-                "enforcedAtPosition": {
-                    "team": {
-                        "id": 71,
-                        "abbreviation": "TB"
-                    },
-                    "yardLine": 35,
-                    "point": null
-                },
-                "description": "False Start",
-                "isCancelsPlay": true,
-                "yardsPenalized": 5
-            },
-            "isFirstDownPenalty": false,
-            "isNoPlay": true
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 5,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 2,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 35
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 6141,
-                        "firstName": "Ryan",
-                        "lastName": "Jensen",
-                        "position": "C",
-                        "jerseyNumber": 66
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "False Start",
-        "penalty": {
-            "penalty": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "penalizedPlayer": {
-                    "id": 7221,
-                    "firstName": "Josh",
-                    "lastName": "Wells",
-                    "position": "OT",
-                    "jerseyNumber": 72
-                },
-                "enforcedAtPosition": {
-                    "team": {
-                        "id": 76,
-                        "abbreviation": "ARI"
-                    },
-                    "yardLine": 30,
-                    "point": null
-                },
-                "description": "False Start",
-                "isCancelsPlay": true,
-                "yardsPenalized": 5
-            },
-            "isFirstDownPenalty": false,
-            "isNoPlay": true
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 164,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 30
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 7221,
-                        "firstName": "Josh",
-                        "lastName": "Wells",
-                        "position": "OT",
-                        "jerseyNumber": 72
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(9:53) M.Gay 46 yard field goal is No Good, Wide Left, Center-Z.Triner, Holder-B.Pinion. PENALTY on ARI-P.Peterson, Defensive Offside, 5 yards, enforced at ARI 28 - No Play.",
-        "fieldGoalAttempt": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "kickingPlayer": {
-                "id": 16234,
-                "firstName": "Matt",
-                "lastName": "Gay",
-                "position": "K",
-                "jerseyNumber": 9
-            },
-            "centerPlayer": {
-                "id": 16228,
-                "firstName": "Zach",
-                "lastName": "Triner",
-                "position": "LS",
-                "jerseyNumber": 97
-            },
-            "holdingPlayer": {
-                "id": 8461,
-                "firstName": "Bradley",
-                "lastName": "Pinion",
-                "position": "P",
-                "jerseyNumber": 8
-            },
-            "kickedFromPosition": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 36,
-                "point": null
-            },
-            "blockingPlayer": null,
-            "blockedAtPosition": null,
-            "isBlocked": false,
-            "isGood": false,
             "isFirstDownPenalty": false,
             "isNoPlay": true,
-            "yardsKicked": 46,
-            "subPlays": [],
-            "penalties": [
+            "yardsRushed": 0,
+            "subPlays": [
                 {
-                    "penalty": {
+                    "pass": {
                         "team": {
                             "id": 76,
                             "abbreviation": "ARI"
                         },
+                        "passingPlayer": {
+                            "id": 16226,
+                            "firstName": "Kyler",
+                            "lastName": "Murray",
+                            "position": "QB",
+                            "jerseyNumber": 1
+                        },
+                        "passedFromPosition": null,
+                        "receivingPlayer": null,
+                        "receivedAtPosition": null,
+                        "interceptingPlayer": null,
+                        "interceptedAtPosition": null,
+                        "soloTacklingPlayer": null,
+                        "assistedTacklingPlayer1": null,
+                        "assistedTacklingPlayer2": null,
+                        "passType": null,
+                        "passDirection": null,
+                        "passDistance": null,
+                        "stoppedAtPosition": null,
+                        "isCompleted": false,
+                        "isOutOfBounds": false,
+                        "isTackled": false,
+                        "isEndedWithTouchdown": false,
+                        "isTwoPointConversion": false,
+                        "isFirstDownPenalty": false,
+                        "isNoPlay": false,
+                        "yardsPassed": 0,
+                        "yardsRushed": 0,
+                        "yardsIntercepted": 0,
+                        "totalYardsGained": 0,
+                        "subPlays": [],
+                        "penalties": []
+                    },
+                    "fumble": {
+                        "fumblingTeam": {
+                            "id": 76,
+                            "abbreviation": "ARI"
+                        },
+                        "fumblingPlayer": {
+                            "id": 5962,
+                            "firstName": "A.Q.",
+                            "lastName": "Shipley",
+                            "position": "C",
+                            "jerseyNumber": 53
+                        },
+                        "fumbledAtPosition": {
+                            "team": {
+                                "id": 59,
+                                "abbreviation": "PIT"
+                            },
+                            "yardLine": 40,
+                            "point": null
+                        },
+                        "forcedByPlayer": null,
+                        "recoveringTeam": {
+                            "id": 76,
+                            "abbreviation": "ARI"
+                        },
+                        "recoveringPlayer": {
+                            "id": 16226,
+                            "firstName": "Kyler",
+                            "lastName": "Murray",
+                            "position": "QB",
+                            "jerseyNumber": 1
+                        },
+                        "recoveredAtPosition": {
+                            "team": {
+                                "id": 59,
+                                "abbreviation": "PIT"
+                            },
+                            "yardLine": 43,
+                            "point": null
+                        },
+                        "soloTacklingPlayer": null,
+                        "assistedTacklingPlayer1": null,
+                        "assistedTacklingPlayer2": null,
+                        "stoppedAtPosition": {
+                            "team": {
+                                "id": 59,
+                                "abbreviation": "PIT"
+                            },
+                            "yardLine": null,
+                            "point": null
+                        },
+                        "isMuff": false,
+                        "isOutOfBounds": false,
+                        "isTackled": false,
+                        "isEndedWithTouchdown": false,
+                        "isSafety": false,
+                        "yardsFromLineOfScrimmage": -4,
+                        "yardsFumbled": 0,
+                        "yardsRecovered": 0
+                    }
+                }
+            ],
+            "penalties": [
+                {
+                    "penalty": {
+                        "team": {
+                            "id": 59,
+                            "abbreviation": "PIT"
+                        },
                         "penalizedPlayer": {
-                            "id": 6007,
-                            "firstName": "Patrick",
-                            "lastName": "Peterson",
-                            "position": "CB",
-                            "jerseyNumber": 21
+                            "id": 7224,
+                            "firstName": "Tyson",
+                            "lastName": "Alualu",
+                            "position": "DE",
+                            "jerseyNumber": 94
                         },
                         "enforcedAtPosition": {
                             "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
+                                "id": 59,
+                                "abbreviation": "PIT"
                             },
-                            "yardLine": 28,
+                            "yardLine": 36,
                             "point": null
                         },
-                        "description": "Defensive Offside",
+                        "description": "Defensive Holding",
                         "isCancelsPlay": true,
                         "yardsPenalized": 5
                     }
@@ -1544,284 +702,25 @@
             ]
         },
         "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 307,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": null,
-            "yardsRemaining": null,
-            "lineOfScrimmage": null,
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 16234,
-                        "firstName": "Matt",
-                        "lastName": "Gay",
-                        "position": "K",
-                        "jerseyNumber": 9
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 8461,
-                        "firstName": "Bradley",
-                        "lastName": "Pinion",
-                        "position": "P",
-                        "jerseyNumber": 8
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 16228,
-                        "firstName": "Zach",
-                        "lastName": "Triner",
-                        "position": "LS",
-                        "jerseyNumber": 97
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(8:39) (Punt formation) A.Lee pass deep left to P.Cooper to TB 38 for 26 yards (A.Adams). Penalty on TB-A.Adams, Defensive Pass Interference, declined.",
-        "pass": {
-            "team": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "passingPlayer": {
-                "id": 6643,
-                "firstName": "Andy",
-                "lastName": "Lee",
-                "position": "P",
-                "jerseyNumber": 4
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 9691,
-                "firstName": "Pharoh",
-                "lastName": "Cooper",
-                "position": "WR",
-                "jerseyNumber": 12
-            },
-            "receivedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38,
-                "point": null
-            },
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": {
-                "id": 10059,
-                "firstName": "Andrew",
-                "lastName": "Adams",
-                "position": "FS",
-                "jerseyNumber": 24
-            },
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38,
-                "point": null
-            },
-            "isCompleted": true,
-            "isOutOfBounds": false,
-            "isTackled": true,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": false,
-            "yardsPassed": 26,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 26,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 10059,
-                            "firstName": "Andrew",
-                            "lastName": "Adams",
-                            "position": "FS",
-                            "jerseyNumber": 24
-                        },
-                        "enforcedAtPosition": null,
-                        "description": "Defensive Pass Interference",
-                        "isCancelsPlay": false,
-                        "yardsPenalized": 0
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 381,
+            "quarter": 3,
+            "secondsElapsed": 359,
             "teamInPossession": {
                 "id": 76,
                 "abbreviation": "ARI"
             },
             "overallDriveNum": null,
             "teamDriveNum": null,
-            "currentDown": 4,
-            "yardsRemaining": 10,
+            "currentDown": 2,
+            "yardsRemaining": 7,
             "lineOfScrimmage": {
                 "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
+                    "id": 59,
+                    "abbreviation": "PIT"
                 },
                 "yardLine": 36
             },
-            "awayPlayersOnField": [
-                {
-                    "player": {
-                        "id": 6643,
-                        "firstName": "Andy",
-                        "lastName": "Lee",
-                        "position": "P",
-                        "jerseyNumber": 4
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 9691,
-                        "firstName": "Pharoh",
-                        "lastName": "Cooper",
-                        "position": "WR",
-                        "jerseyNumber": 12
-                    },
-                    "position": null
-                }
-            ],
+            "awayPlayersOnField": [],
             "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 10059,
-                        "firstName": "Andrew",
-                        "lastName": "Adams",
-                        "position": "FS",
-                        "jerseyNumber": 24
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(8:09) (Shotgun) K.Murray pass incomplete deep right to L.Fitzgerald. PENALTY on TB-M.Stewart, Defensive Pass Interference, 25 yards, enforced at TB 38 - No Play. Tampa Bay challenged the defensive pass interference ruling, and the play was Upheld. The ruling on the field stands. (Timeout #1.)",
-        "pass": {
-            "team": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "passingPlayer": {
-                "id": 16226,
-                "firstName": "Kyler",
-                "lastName": "Murray",
-                "position": "QB",
-                "jerseyNumber": 1
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 5946,
-                "firstName": "Larry",
-                "lastName": "Fitzgerald",
-                "position": "WR",
-                "jerseyNumber": 11
-            },
-            "receivedAtPosition": null,
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": null,
-            "isCompleted": false,
-            "isOutOfBounds": false,
-            "isTackled": false,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsPassed": 0,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 14995,
-                            "firstName": "M.J.",
-                            "lastName": "Stewart",
-                            "position": "CB",
-                            "jerseyNumber": 36
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 71,
-                                "abbreviation": "TB"
-                            },
-                            "yardLine": 38,
-                            "point": null
-                        },
-                        "description": "Defensive Pass Interference",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 25
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 411,
-            "teamInPossession": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
-                },
-                "yardLine": 38
-            },
-            "awayPlayersOnField": [
                 {
                     "player": {
                         "id": 16226,
@@ -1831,40 +730,29 @@
                         "jerseyNumber": 1
                     },
                     "position": null
-                },
-                {
-                    "player": {
-                        "id": 5946,
-                        "firstName": "Larry",
-                        "lastName": "Fitzgerald",
-                        "position": "WR",
-                        "jerseyNumber": 11
-                    },
-                    "position": null
                 }
-            ],
-            "homePlayersOnField": []
+            ]
         }
     },
     {
-        "description": "(2:54) (Shotgun) J.Winston pass incomplete deep right to M.Evans. PENALTY on ARI-B.Murphy Jr., Defensive Pass Interference, 16 yards, enforced at ARI 43 - No Play.",
+        "description": "(3:54) (Shotgun) D.Hodges pass incomplete short left to J.Washington. PENALTY on ARI-B.Murphy Jr., Defensive Pass Interference, 15 yards, enforced at ARI 31 - No Play.",
         "pass": {
             "team": {
-                "id": 71,
-                "abbreviation": "TB"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
+                "id": 16845,
+                "firstName": "Devlin",
+                "lastName": "Hodges",
                 "position": "QB",
-                "jerseyNumber": 3
+                "jerseyNumber": 6
             },
             "passedFromPosition": null,
             "receivingPlayer": {
-                "id": 8562,
-                "firstName": "Mike",
-                "lastName": "Evans",
+                "id": 14727,
+                "firstName": "James",
+                "lastName": "Washington",
                 "position": "WR",
                 "jerseyNumber": 13
             },
@@ -1909,282 +797,50 @@
                                 "id": 76,
                                 "abbreviation": "ARI"
                             },
-                            "yardLine": 43,
+                            "yardLine": 31,
                             "point": null
                         },
                         "description": "Defensive Pass Interference",
                         "isCancelsPlay": true,
-                        "yardsPenalized": 16
+                        "yardsPenalized": 15
                     }
                 }
             ]
         },
         "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 726,
+            "quarter": 3,
+            "secondsElapsed": 666,
             "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 1,
-            "yardsRemaining": 10,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 43
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 8562,
-                        "firstName": "Mike",
-                        "lastName": "Evans",
-                        "position": "WR",
-                        "jerseyNumber": 13
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(Shotgun) J.Winston pass incomplete short right to M.Evans. PENALTY on ARI-J.Thompson, Defensive Pass Interference, 12 yards, enforced at ARI 13 - No Play.",
-        "pass": {
-            "team": {
-                "id": 71,
-                "abbreviation": "TB"
-            },
-            "passingPlayer": {
-                "id": 8550,
-                "firstName": "Jameis",
-                "lastName": "Winston",
-                "position": "QB",
-                "jerseyNumber": 3
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 8562,
-                "firstName": "Mike",
-                "lastName": "Evans",
-                "position": "WR",
-                "jerseyNumber": 13
-            },
-            "receivedAtPosition": null,
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": null,
-            "isCompleted": false,
-            "isOutOfBounds": false,
-            "isTackled": false,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsPassed": 0,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 76,
-                            "abbreviation": "ARI"
-                        },
-                        "penalizedPlayer": {
-                            "id": 17072,
-                            "firstName": "Jalen",
-                            "lastName": "Thompson",
-                            "position": "FS",
-                            "jerseyNumber": 34
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 13,
-                            "point": null
-                        },
-                        "description": "Defensive Pass Interference",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 12
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 780,
-            "teamInPossession": {
-                "id": 71,
-                "abbreviation": "TB"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "overallDriveNum": null,
             "teamDriveNum": null,
             "currentDown": 2,
-            "yardsRemaining": 10,
+            "yardsRemaining": 6,
             "lineOfScrimmage": {
                 "team": {
                     "id": 76,
                     "abbreviation": "ARI"
                 },
-                "yardLine": 13
-            },
-            "awayPlayersOnField": [],
-            "homePlayersOnField": [
-                {
-                    "player": {
-                        "id": 8550,
-                        "firstName": "Jameis",
-                        "lastName": "Winston",
-                        "position": "QB",
-                        "jerseyNumber": 3
-                    },
-                    "position": null
-                },
-                {
-                    "player": {
-                        "id": 8562,
-                        "firstName": "Mike",
-                        "lastName": "Evans",
-                        "position": "WR",
-                        "jerseyNumber": 13
-                    },
-                    "position": null
-                }
-            ]
-        }
-    },
-    {
-        "description": "(:30) (Shotgun) K.Murray pass incomplete deep right to C.Kirk. PENALTY on TB-V.Hargreaves, Defensive Pass Interference, 18 yards, enforced at ARI 30 - No Play.",
-        "pass": {
-            "team": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "passingPlayer": {
-                "id": 16226,
-                "firstName": "Kyler",
-                "lastName": "Murray",
-                "position": "QB",
-                "jerseyNumber": 1
-            },
-            "passedFromPosition": null,
-            "receivingPlayer": {
-                "id": 14654,
-                "firstName": "Christian",
-                "lastName": "Kirk",
-                "position": "WR",
-                "jerseyNumber": 13
-            },
-            "receivedAtPosition": null,
-            "interceptingPlayer": null,
-            "interceptedAtPosition": null,
-            "soloTacklingPlayer": null,
-            "assistedTacklingPlayer1": null,
-            "assistedTacklingPlayer2": null,
-            "passType": null,
-            "passDirection": null,
-            "passDistance": null,
-            "stoppedAtPosition": null,
-            "isCompleted": false,
-            "isOutOfBounds": false,
-            "isTackled": false,
-            "isEndedWithTouchdown": false,
-            "isTwoPointConversion": false,
-            "isFirstDownPenalty": false,
-            "isNoPlay": true,
-            "yardsPassed": 0,
-            "yardsRushed": 0,
-            "yardsIntercepted": 0,
-            "totalYardsGained": 0,
-            "subPlays": [],
-            "penalties": [
-                {
-                    "penalty": {
-                        "team": {
-                            "id": 71,
-                            "abbreviation": "TB"
-                        },
-                        "penalizedPlayer": {
-                            "id": 10034,
-                            "firstName": "Vernon",
-                            "lastName": "Hargreaves",
-                            "position": "CB",
-                            "jerseyNumber": 28
-                        },
-                        "enforcedAtPosition": {
-                            "team": {
-                                "id": 76,
-                                "abbreviation": "ARI"
-                            },
-                            "yardLine": 30,
-                            "point": null
-                        },
-                        "description": "Defensive Pass Interference",
-                        "isCancelsPlay": true,
-                        "yardsPenalized": 18
-                    }
-                }
-            ]
-        },
-        "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 870,
-            "teamInPossession": {
-                "id": 76,
-                "abbreviation": "ARI"
-            },
-            "overallDriveNum": null,
-            "teamDriveNum": null,
-            "currentDown": 4,
-            "yardsRemaining": 5,
-            "lineOfScrimmage": {
-                "team": {
-                    "id": 76,
-                    "abbreviation": "ARI"
-                },
-                "yardLine": 30
+                "yardLine": 31
             },
             "awayPlayersOnField": [
                 {
                     "player": {
-                        "id": 16226,
-                        "firstName": "Kyler",
-                        "lastName": "Murray",
+                        "id": 16845,
+                        "firstName": "Devlin",
+                        "lastName": "Hodges",
                         "position": "QB",
-                        "jerseyNumber": 1
+                        "jerseyNumber": 6
                     },
                     "position": null
                 },
                 {
                     "player": {
-                        "id": 14654,
-                        "firstName": "Christian",
-                        "lastName": "Kirk",
+                        "id": 14727,
+                        "firstName": "James",
+                        "lastName": "Washington",
                         "position": "WR",
                         "jerseyNumber": 13
                     },
@@ -2195,35 +851,35 @@
         }
     },
     {
-        "description": "(:25) (Shotgun) K.Murray scrambles up the middle to TB 44 for 8 yards (D.White). PENALTY on ARI-M.Cole, Offensive Holding, 10 yards, enforced at ARI 48 - No Play.",
+        "description": "(2:58) B.Snell Jr. left end to ARI 5 for -3 yards (T.Suggs). PENALTY on ARI-T.Suggs, Face Mask (15 Yards), 1 yard, enforced at ARI 2 - No Play.",
         "rush": {
             "team": {
-                "id": 76,
-                "abbreviation": "ARI"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "rushingPlayer": {
-                "id": 16226,
-                "firstName": "Kyler",
-                "lastName": "Murray",
-                "position": "QB",
-                "jerseyNumber": 1
+                "id": 16840,
+                "firstName": "Benny",
+                "lastName": "Snell",
+                "position": "RB",
+                "jerseyNumber": 24
             },
             "rushedFromPosition": null,
             "soloTacklingPlayer": {
-                "id": 15038,
-                "firstName": "Jordan",
-                "lastName": "Whitehead",
-                "position": "FS",
-                "jerseyNumber": 31
+                "id": 6177,
+                "firstName": "Terrell",
+                "lastName": "Suggs",
+                "position": "LB",
+                "jerseyNumber": 56
             },
             "assistedTacklingPlayer1": null,
             "assistedTacklingPlayer2": null,
             "stoppedAtPosition": {
                 "team": {
-                    "id": 71,
-                    "abbreviation": "TB"
+                    "id": 76,
+                    "abbreviation": "ARI"
                 },
-                "yardLine": 44,
+                "yardLine": 5,
                 "point": null
             },
             "rushType": null,
@@ -2232,9 +888,9 @@
             "isTackled": true,
             "isEndedWithTouchdown": false,
             "isTwoPointConversion": false,
-            "isFirstDownPenalty": true,
+            "isFirstDownPenalty": false,
             "isNoPlay": true,
-            "yardsRushed": 8,
+            "yardsRushed": -3,
             "subPlays": [],
             "penalties": [
                 {
@@ -2244,53 +900,53 @@
                             "abbreviation": "ARI"
                         },
                         "penalizedPlayer": {
-                            "id": 15147,
-                            "firstName": "Mason",
-                            "lastName": "Cole",
-                            "position": "C",
-                            "jerseyNumber": 52
+                            "id": 6177,
+                            "firstName": "Terrell",
+                            "lastName": "Suggs",
+                            "position": "LB",
+                            "jerseyNumber": 56
                         },
                         "enforcedAtPosition": {
                             "team": {
                                 "id": 76,
                                 "abbreviation": "ARI"
                             },
-                            "yardLine": 48,
+                            "yardLine": 2,
                             "point": null
                         },
-                        "description": "Offensive Holding",
+                        "description": "Face Mask (15 Yards)",
                         "isCancelsPlay": true,
-                        "yardsPenalized": 10
+                        "yardsPenalized": 1
                     }
                 }
             ]
         },
         "playStatus": {
-            "quarter": 4,
-            "secondsElapsed": 875,
+            "quarter": 3,
+            "secondsElapsed": 722,
             "teamInPossession": {
-                "id": 76,
-                "abbreviation": "ARI"
+                "id": 59,
+                "abbreviation": "PIT"
             },
             "overallDriveNum": null,
             "teamDriveNum": null,
             "currentDown": 1,
-            "yardsRemaining": 10,
+            "yardsRemaining": 2,
             "lineOfScrimmage": {
                 "team": {
                     "id": 76,
                     "abbreviation": "ARI"
                 },
-                "yardLine": 48
+                "yardLine": 2
             },
             "awayPlayersOnField": [
                 {
                     "player": {
-                        "id": 16226,
-                        "firstName": "Kyler",
-                        "lastName": "Murray",
-                        "position": "QB",
-                        "jerseyNumber": 1
+                        "id": 16840,
+                        "firstName": "Benny",
+                        "lastName": "Snell",
+                        "position": "RB",
+                        "jerseyNumber": 24
                     },
                     "position": null
                 }
@@ -2298,15 +954,257 @@
             "homePlayersOnField": [
                 {
                     "player": {
-                        "id": 15038,
-                        "firstName": "Jordan",
-                        "lastName": "Whitehead",
-                        "position": "FS",
-                        "jerseyNumber": 31
+                        "id": 6177,
+                        "firstName": "Terrell",
+                        "lastName": "Suggs",
+                        "position": "LB",
+                        "jerseyNumber": 56
                     },
                     "position": null
                 }
             ]
+        }
+    },
+    {
+        "description": "(5:21) (Shotgun) D.Hodges pass incomplete deep right to J.Washington. PENALTY on ARI-B.Murphy Jr., Defensive Pass Interference, 24 yards, enforced at PIT 29 - No Play.",
+        "pass": {
+            "team": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "passingPlayer": {
+                "id": 16845,
+                "firstName": "Devlin",
+                "lastName": "Hodges",
+                "position": "QB",
+                "jerseyNumber": 6
+            },
+            "passedFromPosition": null,
+            "receivingPlayer": {
+                "id": 14727,
+                "firstName": "James",
+                "lastName": "Washington",
+                "position": "WR",
+                "jerseyNumber": 13
+            },
+            "receivedAtPosition": null,
+            "interceptingPlayer": null,
+            "interceptedAtPosition": null,
+            "soloTacklingPlayer": null,
+            "assistedTacklingPlayer1": null,
+            "assistedTacklingPlayer2": null,
+            "passType": null,
+            "passDirection": null,
+            "passDistance": null,
+            "stoppedAtPosition": null,
+            "isCompleted": false,
+            "isOutOfBounds": false,
+            "isTackled": false,
+            "isEndedWithTouchdown": false,
+            "isTwoPointConversion": false,
+            "isFirstDownPenalty": false,
+            "isNoPlay": true,
+            "yardsPassed": 0,
+            "yardsRushed": 0,
+            "yardsIntercepted": 0,
+            "totalYardsGained": 0,
+            "subPlays": [],
+            "penalties": [
+                {
+                    "penalty": {
+                        "team": {
+                            "id": 76,
+                            "abbreviation": "ARI"
+                        },
+                        "penalizedPlayer": {
+                            "id": 16207,
+                            "firstName": "Byron",
+                            "lastName": "Murphy",
+                            "position": "CB",
+                            "jerseyNumber": 33
+                        },
+                        "enforcedAtPosition": {
+                            "team": {
+                                "id": 59,
+                                "abbreviation": "PIT"
+                            },
+                            "yardLine": 29,
+                            "point": null
+                        },
+                        "description": "Defensive Pass Interference",
+                        "isCancelsPlay": true,
+                        "yardsPenalized": 24
+                    }
+                }
+            ]
+        },
+        "playStatus": {
+            "quarter": 4,
+            "secondsElapsed": 579,
+            "teamInPossession": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 2,
+            "yardsRemaining": 7,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 59,
+                    "abbreviation": "PIT"
+                },
+                "yardLine": 29
+            },
+            "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 16845,
+                        "firstName": "Devlin",
+                        "lastName": "Hodges",
+                        "position": "QB",
+                        "jerseyNumber": 6
+                    },
+                    "position": null
+                },
+                {
+                    "player": {
+                        "id": 14727,
+                        "firstName": "James",
+                        "lastName": "Washington",
+                        "position": "WR",
+                        "jerseyNumber": 13
+                    },
+                    "position": null
+                }
+            ],
+            "homePlayersOnField": []
+        }
+    },
+    {
+        "description": "False Start",
+        "penalty": {
+            "penalty": {
+                "team": {
+                    "id": 59,
+                    "abbreviation": "PIT"
+                },
+                "penalizedPlayer": {
+                    "id": 8133,
+                    "firstName": "Alejandro",
+                    "lastName": "Villanueva",
+                    "position": "OT",
+                    "jerseyNumber": 78
+                },
+                "enforcedAtPosition": {
+                    "team": {
+                        "id": 76,
+                        "abbreviation": "ARI"
+                    },
+                    "yardLine": 21,
+                    "point": null
+                },
+                "description": "False Start",
+                "isCancelsPlay": true,
+                "yardsPenalized": 5
+            },
+            "isFirstDownPenalty": false,
+            "isNoPlay": true
+        },
+        "playStatus": {
+            "quarter": 4,
+            "secondsElapsed": 764,
+            "teamInPossession": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 3,
+            "yardsRemaining": 8,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 21
+            },
+            "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 8133,
+                        "firstName": "Alejandro",
+                        "lastName": "Villanueva",
+                        "position": "OT",
+                        "jerseyNumber": 78
+                    },
+                    "position": null
+                }
+            ],
+            "homePlayersOnField": []
+        }
+    },
+    {
+        "description": "Neutral Zone Infraction",
+        "penalty": {
+            "penalty": {
+                "team": {
+                    "id": 59,
+                    "abbreviation": "PIT"
+                },
+                "penalizedPlayer": {
+                    "id": 13206,
+                    "firstName": "T.J.",
+                    "lastName": "Watt",
+                    "position": "LB",
+                    "jerseyNumber": 90
+                },
+                "enforcedAtPosition": {
+                    "team": {
+                        "id": 76,
+                        "abbreviation": "ARI"
+                    },
+                    "yardLine": 13,
+                    "point": null
+                },
+                "description": "Neutral Zone Infraction",
+                "isCancelsPlay": true,
+                "yardsPenalized": 5
+            },
+            "isFirstDownPenalty": false,
+            "isNoPlay": true
+        },
+        "playStatus": {
+            "quarter": 4,
+            "secondsElapsed": 852,
+            "teamInPossession": {
+                "id": 59,
+                "abbreviation": "PIT"
+            },
+            "overallDriveNum": null,
+            "teamDriveNum": null,
+            "currentDown": 4,
+            "yardsRemaining": 22,
+            "lineOfScrimmage": {
+                "team": {
+                    "id": 76,
+                    "abbreviation": "ARI"
+                },
+                "yardLine": 13
+            },
+            "awayPlayersOnField": [
+                {
+                    "player": {
+                        "id": 13206,
+                        "firstName": "T.J.",
+                        "lastName": "Watt",
+                        "position": "LB",
+                        "jerseyNumber": 90
+                    },
+                    "position": null
+                }
+            ],
+            "homePlayersOnField": []
         }
     }
 ]
