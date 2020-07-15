@@ -3,12 +3,11 @@ import base64
 import requests
 import json
 import csv
-import PySimpleGUI as sg
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
 ## returns a tuple with the cumulative penalty info and penalty report
-def penaltyReport(date, awayTeam, homeTeam):
+def makePenaltyReport(date, awayTeam, homeTeam):
 	gameParam = date + "-" + awayTeam + "-" + homeTeam
 
 	pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + gameParam + '/playbyplay.json'
@@ -592,32 +591,28 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	print("CSVified!")
 
 if __name__ == '__main__':
-	#create the window
-	layout = [[sg.Text('Enter game info:')], [sg.Text('Date:'), sg.InputText()], [sg.Text('Away Team:'), sg.InputText()], [sg.Text('Home Team:'), sg.InputText()], [sg.Submit()]]
-	window = sg.Window('Single Game Report', layout)
-	event, values = window.read()
-	window.close()
 
-	date = values[0]
-	awayTeam = values[1]
-	homeTeam = values[2]
+	schedule = [(1, '20190908', 'LA', 'CAR'),(2, '20190912', 'TB', 'CAR'),(3, '20190922', 'CAR', 'ARI'),(4, '20190929', 'CAR', 'HOU'),(5, '20191006', 'JAX', 'CAR'),(6, '20191013', 'CAR', 'TB'),(8, '20191027', 'CAR', 'SF'),(9, '20191103', 'TEN', 'CAR'),(10, '20191110', 'CAR', 'GB'),(11, '20191117', 'ATL', 'CAR'),(12, '20191124', 'CAR', 'NO'),(13, '20191201', 'WAS', 'CAR'),(14, '20191208', 'CAR', 'ATL'),(15, '20191215', 'SEA', 'CAR'),(16, '20191222', 'CAR', 'IND'),(17, '20191229', 'NO', 'CAR')]
+
+	for game in schedule:
+		date = game[1]
+		awayTeam = game[2]
+		homeTeam = game[3]
 
 
-	penaltyInfoTup = penaltyReport(date, awayTeam, homeTeam)
-	boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
-	
-	cumulPenInfo = penaltyInfoTup[0]
-	penaltyReport = penaltyInfoTup[1]
-	expPointReport = expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo)
+		penaltyInfoTup = makePenaltyReport(date, awayTeam, homeTeam)
+		boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
+		
+		cumulPenInfo = penaltyInfoTup[0]
+		penaltyReport = penaltyInfoTup[1]
+		expPointReport = expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo)
 
-	csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPointReport)
+		csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPointReport)
 
-	for penalty in penaltyReport:
-		print(penalty)
+		for penalty in penaltyReport:
+			print(penalty)
 
-	print("\n")
+		print("\n")
 
-	for expPoint in expPointReport:
-		print(expPoint)
-
-	sg.popup("Script finished successfully")
+		for expPoint in expPointReport:
+			print(expPoint)
