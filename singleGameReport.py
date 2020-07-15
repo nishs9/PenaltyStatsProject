@@ -448,7 +448,10 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 				select = Select(driver.find_element_by_xpath(side_of_field))
 				select.select_by_visible_text("Opp")
 
-		driver.find_element_by_xpath(yard_line).send_keys(str(postFieldPos[1]))
+		if postFieldPos[1] <= 0:
+			driver.find_element_by_xpath(yard_line).send_keys("1")
+		else:
+			driver.find_element_by_xpath(yard_line).send_keys(postFieldPos[1])
 		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
 

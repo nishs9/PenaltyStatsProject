@@ -7,9 +7,9 @@ import csv
 ## https://www.espn.com/nfl/scoreboard/_/year/2019/seasontype/2/week/8 
 ## the page above has games that occured on 10-27-2019 that will be useful for easy testing
 
-date = "20191110"
-awayTeam = "ARI"
-homeTeam = "TB"
+date = "20191229"
+awayTeam = "PIT"
+homeTeam = "BAL"
 
 gameParam = date + "-" + awayTeam + "-" + homeTeam
 
