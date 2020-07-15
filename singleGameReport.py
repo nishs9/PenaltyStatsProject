@@ -3,6 +3,7 @@ import base64
 import requests
 import json
 import csv
+import PySimpleGUI as sg
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -576,9 +577,16 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	print("CSVified!")
 
 if __name__ == '__main__':
-	date = "20191229"
-	awayTeam = "ATL"
-	homeTeam = "TB"
+	#create the window
+	layout = [[sg.Text('Enter game info:')], [sg.Text('Date:'), sg.InputText()], [sg.Text('Away Team:'), sg.InputText()], [sg.Text('Home Team:'), sg.InputText()], [sg.Submit()]]
+	window = sg.Window('Single Game Report', layout)
+	event, values = window.read()
+	window.close()
+
+	date = values[0]
+	awayTeam = values[1]
+	homeTeam = values[2]
+
 
 	penaltyInfoTup = penaltyReport(date, awayTeam, homeTeam)
 	boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
