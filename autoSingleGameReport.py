@@ -593,7 +593,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	schedule = [(1, '20190908', 'LA', 'CAR'),(2, '20190912', 'TB', 'CAR'),(3, '20190922', 'CAR', 'ARI'),(4, '20190929', 'CAR', 'HOU'),(5, '20191006', 'JAX', 'CAR'),(6, '20191013', 'CAR', 'TB'),(8, '20191027', 'CAR', 'SF'),(9, '20191103', 'TEN', 'CAR'),(10, '20191110', 'CAR', 'GB'),(11, '20191117', 'ATL', 'CAR'),(12, '20191124', 'CAR', 'NO'),(13, '20191201', 'WAS', 'CAR'),(14, '20191208', 'CAR', 'ATL'),(15, '20191215', 'SEA', 'CAR'),(16, '20191222', 'CAR', 'IND'),(17, '20191229', 'NO', 'CAR')]
+	schedule = [(5, '20191006', 'CHI', 'OAK'),(7, '20191020', 'NO', 'CHI'),(8, '20191027', 'LAC', 'CHI'),(9, '20191103', 'CHI', 'PHI'),(10, '20191110', 'DET', 'CHI'),(11, '20191117', 'CHI', 'LA'),(12, '20191124', 'NYG', 'CHI'),(13, '20191128', 'CHI', 'DET'),(14, '20191205', 'DAL', 'CHI'),(15, '20191215', 'CHI', 'GB'),(16, '20191222', 'KC', 'CHI'),(17, '20191229', 'CHI', 'MIN')]
 
 	for game in schedule:
 		date = game[1]

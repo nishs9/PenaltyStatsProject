@@ -4,12 +4,12 @@ import requests
 import json
 import csv
 
-## https://www.espn.com/nfl/scoreboard/_/year/2019/seasontype/2/week/8 
+## https://www.espn.com/nfl/scoreboard/_/year/2019/seasontype/2/week/8
 ## the page above has games that occured on 10-27-2019 that will be useful for easy testing
 
-date = "20191229"
-awayTeam = "PIT"
-homeTeam = "BAL"
+date = "20191006"
+awayTeam = "CHI"
+homeTeam = "LV"
 
 gameParam = date + "-" + awayTeam + "-" + homeTeam
 
@@ -22,7 +22,7 @@ returnDict[homeTeam] = [0, 0, 0, 0, 0, 0]
 returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
 
 # Indices for penalty report
-# 0 - Penalized Team 
+# 0 - Penalized Team
 # 1 - Penalty Type (DEP, DHP, OP)
 # 2 - Yards from Penalty
 # 3 - Pre-Penalty Field Position (Side of Field, Yardline)
@@ -132,7 +132,7 @@ try:
 
                 ##add penalty to the report
                 newPenalty = [penalizedTeam, "", yards, preFieldPos, enforcedFieldPos, postFieldPos, time, downAndDistance]
-               
+
                 ##DEP tally
                 if yards >= yardsToGo:
                     returnDict[penalizedTeam][0] += 1
@@ -213,7 +213,7 @@ try:
                             postFieldPos[1] = enforcedFieldPos[1] + yards
                         else:
                             postFieldPos[0] = teamInPoss
-                            postFieldPos[1] = 100 - yards - enforcedFieldPos[1] 
+                            postFieldPos[1] = 100 - yards - enforcedFieldPos[1]
                     ##add penalty to the report
                     newPenalty = [penalizedTeam, "DHP", yards, preFieldPos, enforcedFieldPos, postFieldPos, time, downAndDistance]
                     penaltyReport.append(newPenalty)
