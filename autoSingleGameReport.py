@@ -16,8 +16,14 @@ def makePenaltyReport(date, awayTeam, homeTeam):
 	returnDict = {}
 
 	##returnDict format: "team abbreviation" : [# of DEPs, yards from DEPs, # of DHPs, yards from DHPs, # of OPs, yards from OPs]
-	returnDict[homeTeam] = [0, 0, 0, 0, 0, 0]
-	returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
+	if homeTeam == "LV":
+		returnDict["OAK"] = [0, 0, 0, 0, 0, 0]
+	else:
+		returnDict[homeTeam] = [0, 0, 0, 0, 0, 0]
+	if awayTeam == "LV":
+		returnDict["OAK"] = [0, 0, 0, 0, 0, 0]
+	else:
+		returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
 
 	# Indices for penalty report
 	# 0 - Penalized Team
@@ -520,12 +526,22 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 			else:
 				home_tEPOP += row[5]
 
-	section2.append([homeTeam, home_totalPens, home_totalYards, cumulPenInfo[homeTeam][2], cumulPenInfo[homeTeam][3], home_tEPDHP, cumulPenInfo[homeTeam][0], cumulPenInfo[homeTeam][1], home_tEPDEP, cumulPenInfo[homeTeam][4], cumulPenInfo[homeTeam][5], home_tEPOP])
-	section2.append([awayTeam, away_totalPens, away_totalYards, cumulPenInfo[awayTeam][2], cumulPenInfo[awayTeam][3], away_tEPDHP, cumulPenInfo[awayTeam][0], cumulPenInfo[awayTeam][1], away_tEPDEP, cumulPenInfo[awayTeam][4], cumulPenInfo[awayTeam][5], away_tEPOP])
+	if homeTeam == "LV":
+		section2.append([homeTeam, home_totalPens, home_totalYards, cumulPenInfo["OAK"][2], cumulPenInfo["OAK"][3], home_tEPDHP, cumulPenInfo["OAK"][0], cumulPenInfo["OAK"][1], home_tEPDEP, cumulPenInfo["OAK"][4], cumulPenInfo["OAK"][5], home_tEPOP])
+	else:
+		section2.append([homeTeam, home_totalPens, home_totalYards, cumulPenInfo[homeTeam][2], cumulPenInfo[homeTeam][3], home_tEPDHP, cumulPenInfo[homeTeam][0], cumulPenInfo[homeTeam][1], home_tEPDEP, cumulPenInfo[homeTeam][4], cumulPenInfo[homeTeam][5], home_tEPOP])
+
+	if awayTeam == "LV":
+		section2.append([awayTeam, away_totalPens, away_totalYards, cumulPenInfo["OAK"][2], cumulPenInfo["OAK"][3], away_tEPDHP, cumulPenInfo["OAK"][0], cumulPenInfo["OAK"][1], away_tEPDEP, cumulPenInfo["OAK"][4], cumulPenInfo["OAK"][5], away_tEPOP])
+	else:
+		section2.append([awayTeam, away_totalPens, away_totalYards, cumulPenInfo[awayTeam][2], cumulPenInfo[awayTeam][3], away_tEPDHP, cumulPenInfo[awayTeam][0], cumulPenInfo[awayTeam][1], away_tEPDEP, cumulPenInfo[awayTeam][4], cumulPenInfo[awayTeam][5], away_tEPOP])
 
 	home_yardsPerPen = "N/A"
 	if home_totalPens > 0:
 		home_yardsPerPen = home_totalYards/home_totalPens
+
+	if homeTeam == "LV":
+		homeTeam = "OAK"
 
 	home_yardsPerDHP = "N/A"
 	home_expPointsPerDHP = "N/A"
@@ -549,6 +565,9 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	if away_totalPens > 0:
 		away_yardsPerPen = away_totalYards/away_totalPens
 
+	if awayTeam == "LV":
+		awayTeam = "OAK"
+
 	away_yardsPerDHP = "N/A"
 	away_expPointsPerDHP = "N/A"
 	if cumulPenInfo[awayTeam][2] > 0:
@@ -566,6 +585,12 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	if cumulPenInfo[awayTeam][4] > 0:
 		away_yardsPerOP = cumulPenInfo[awayTeam][5]/cumulPenInfo[awayTeam][4]
 		away_expPointsPerOP = away_tEPOP/cumulPenInfo[awayTeam][4]
+
+	if homeTeam == "OAK":
+		homeTeam = "LV"
+
+	if awayTeam == "OAK":
+		awayTeam = "LV"
 
 	section3.append([homeTeam, home_yardsPerPen, home_yardsPerDHP, home_expPointsPerDHP, home_yardsPerDEP, home_expPointsPerDEP, home_yardsPerOP, home_expPointsPerOP])
 	section3.append([awayTeam, away_yardsPerPen, away_yardsPerDHP, away_expPointsPerDHP, away_yardsPerDEP, away_expPointsPerDEP, away_yardsPerOP, away_expPointsPerOP])
@@ -593,7 +618,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	schedule = [(5, '20191006', 'CHI', 'OAK'),(7, '20191020', 'NO', 'CHI'),(8, '20191027', 'LAC', 'CHI'),(9, '20191103', 'CHI', 'PHI'),(10, '20191110', 'DET', 'CHI'),(11, '20191117', 'CHI', 'LA'),(12, '20191124', 'NYG', 'CHI'),(13, '20191128', 'CHI', 'DET'),(14, '20191205', 'DAL', 'CHI'),(15, '20191215', 'CHI', 'GB'),(16, '20191222', 'KC', 'CHI'),(17, '20191229', 'CHI', 'MIN')]
+	schedule = [(17, '20191229', 'CHI', 'MIN')]
 
 	for game in schedule:
 		date = game[1]

@@ -18,8 +18,14 @@ pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + ga
 returnDict = {}
 
 ##returnDict format: "team abbreviation" : [# of DEPs, yards from DEPs, # of DHPs, yards from DHPs, # of OPs, yards from OPs]
-returnDict[homeTeam] = [0, 0, 0, 0, 0, 0]
-returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
+if homeTeam == "LV":
+    returnDict["OAK"] = [0, 0, 0, 0, 0, 0]
+else:
+    returnDict[homeTeam] = [0, 0, 0, 0, 0, 0]
+if awayTeam == "LV":
+    returnDict["OAK"] = [0, 0, 0, 0, 0, 0]
+else:
+    returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
 
 # Indices for penalty report
 # 0 - Penalized Team
