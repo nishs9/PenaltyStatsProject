@@ -1,8 +1,9 @@
 import config
+import location
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
-chromedriver_location = "C:/Users/analy/Downloads/chromedriver_win32/chromedriver"
+chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
 
 driver = webdriver.Chrome(chromedriver_location)
 driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")

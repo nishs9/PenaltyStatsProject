@@ -3,6 +3,7 @@ import base64
 import requests
 import json
 import csv
+import location
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -19,12 +20,12 @@ def makePenaltyReport(date, awayTeam, homeTeam):
 	returnDict[awayTeam] = [0, 0, 0, 0, 0, 0]
 
 	# Indices for penalty report
-	# 0 - Penalized Team 
+	# 0 - Penalized Team
 	# 1 - Penalty Type (DEP, DHP, OP)
 	# 2 - Yards from Penalty
 	# 3 - Pre-Penalty Field Position
-	# 4 - Enforced Penalty Field Position 
-	# 5 - Post-Penalty Field Position 
+	# 4 - Enforced Penalty Field Position
+	# 5 - Post-Penalty Field Position
 	# 6 - Game clock (Quarter, time)
 	# 7 - Pre-Penalty Down & Distance
 
@@ -130,7 +131,7 @@ def makePenaltyReport(date, awayTeam, homeTeam):
 
 					##add penalty to the report
 					newPenalty = [penalizedTeam, "", yards, preFieldPos, enforcedFieldPos, postFieldPos, time, downAndDistance]
-				   
+
 					##DEP tally
 					if yards >= yardsToGo:
 						returnDict[penalizedTeam][0] += 1
@@ -213,7 +214,7 @@ def makePenaltyReport(date, awayTeam, homeTeam):
 								postFieldPos[1] = enforcedFieldPos[1] + yards
 							else:
 								postFieldPos[0] = teamInPoss
-								postFieldPos[1] = 100 - yards - enforcedFieldPos[1] 
+								postFieldPos[1] = 100 - yards - enforcedFieldPos[1]
 						##add penalty to the report
 						newPenalty = [penalizedTeam, "DHP", yards, preFieldPos, enforcedFieldPos, postFieldPos, time, downAndDistance]
 						penaltyReport.append(newPenalty)
@@ -261,7 +262,7 @@ def boxScoreReport(date, awayTeam, homeTeam):
 
 
 	# Indices for score report
-	# 0 - home team score 
+	# 0 - home team score
 	# 1 - away team score
 	# 2 - quarter
 	# 3 - time
@@ -325,7 +326,7 @@ def boxScoreReport(date, awayTeam, homeTeam):
 
 def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 	## intializing the web-scraping phase of the function
-	chromedriver_location = "C:/Users/analy/Downloads/chromedriver_win32/chromedriver"
+	chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
 	driver = webdriver.Chrome(chromedriver_location)
 
 	returnList = []
@@ -379,9 +380,9 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 						scoreDifferential = boxScoreInfo[i-1][1] - boxScoreInfo[i-1][0]
 					else:
 						scoreDifferential = boxScoreInfo[i-1][0] - boxScoreInfo[i-1][1]
-			i += 1  
+			i += 1
 
-		## NOTE: This calculator takes everything into account from the team in possession's perspective 
+		## NOTE: This calculator takes everything into account from the team in possession's perspective
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
 
 		## Each of the form fields/buttons
@@ -525,19 +526,19 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	home_yardsPerPen = "N/A"
 	if home_totalPens > 0:
 		home_yardsPerPen = home_totalYards/home_totalPens
-	
+
 	home_yardsPerDHP = "N/A"
 	home_expPointsPerDHP = "N/A"
 	if cumulPenInfo[homeTeam][2] > 0:
 		home_yardsPerDHP = cumulPenInfo[homeTeam][3]/cumulPenInfo[homeTeam][2]
 		home_expPointsPerDHP = home_tEPDHP/cumulPenInfo[homeTeam][2]
-	
+
 	home_yardsPerDEP = "N/A"
 	home_expPointsPerDEP = "N/A"
 	if cumulPenInfo[homeTeam][0] > 0:
 		home_yardsPerDEP = cumulPenInfo[homeTeam][1]/cumulPenInfo[homeTeam][0]
 		home_expPointsPerDEP = home_tEPDEP/cumulPenInfo[homeTeam][0]
-	
+
 	home_yardsPerOP = "N/A"
 	home_expPointsPerOP = "N/A"
 	if cumulPenInfo[homeTeam][4] > 0:
@@ -547,19 +548,19 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	away_yardsPerPen = "N/A"
 	if away_totalPens > 0:
 		away_yardsPerPen = away_totalYards/away_totalPens
-	
+
 	away_yardsPerDHP = "N/A"
 	away_expPointsPerDHP = "N/A"
 	if cumulPenInfo[awayTeam][2] > 0:
 		away_yardsPerDHP = cumulPenInfo[awayTeam][3]/cumulPenInfo[awayTeam][2]
 		away_expPointsPerDHP = away_tEPDHP/cumulPenInfo[awayTeam][2]
-	
+
 	away_yardsPerDEP = "N/A"
 	away_expPointsPerDEP = "N/A"
 	if cumulPenInfo[awayTeam][0] > 0:
 		away_yardsPerDEP = cumulPenInfo[awayTeam][1]/cumulPenInfo[awayTeam][0]
 		away_expPointsPerDEP = away_tEPDEP/cumulPenInfo[awayTeam][0]
-	
+
 	away_yardsPerOP = "N/A"
 	away_expPointsPerOP = "N/A"
 	if cumulPenInfo[awayTeam][4] > 0:
@@ -602,7 +603,7 @@ if __name__ == '__main__':
 
 		penaltyInfoTup = makePenaltyReport(date, awayTeam, homeTeam)
 		boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
-		
+
 		cumulPenInfo = penaltyInfoTup[0]
 		penaltyReport = penaltyInfoTup[1]
 		expPointReport = expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo)
