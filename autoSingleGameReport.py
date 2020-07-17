@@ -618,7 +618,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	schedule = [(8, '20191027', 'OAK', 'HOU'),(9, '20191103', 'HOU', 'JAX'),(11, '20191117', 'HOU', 'BAL'),(12, '20191121', 'IND', 'HOU'),(13, '20191201', 'NE', 'HOU'),(14, '20191208', 'DEN', 'HOU'),(15, '20191215', 'HOU', 'TEN'),(16, '20191221', 'HOU', 'TB'),(17, '20191229', 'TEN', 'HOU')]
+	schedule = [(1, '20190908', 'PIT', 'NE'),(2, '20190915', 'SEA', 'PIT'),(3, '20190922', 'PIT', 'SF'),(4, '20190930', 'CIN', 'PIT'),(5, '20191006', 'BAL', 'PIT'),(6, '20191013', 'PIT', 'LAC'),(8, '20191028', 'MIA', 'PIT'),(9, '20191103', 'IND', 'PIT'),(10, '20191110', 'LA', 'PIT'),(11, '20191114', 'PIT', 'CLE'),(12, '20191124', 'PIT', 'CIN'),(13, '20191201', 'CLE', 'PIT'),(14, '20191208', 'PIT', 'ARI'),(15, '20191215', 'BUF', 'PIT'),(16, '20191222', 'PIT', 'NYJ'),(17, '20191229', 'PIT', 'BAL')]
 
 	for game in schedule:
 		date = game[1]

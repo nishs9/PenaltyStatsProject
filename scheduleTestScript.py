@@ -12,7 +12,7 @@ try:
         url="https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games.json",
         params={
             "fordate": "20200716",
-            "team": "HOU"
+            "team": "PIT"
         },
         headers={
             "Authorization": "Basic " + base64.b64encode('{}:{}'.format(config.api_key,config.api_secret).encode('utf-8')).decode('ascii')
