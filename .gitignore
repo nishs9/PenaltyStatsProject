@@ -3,3 +3,4 @@ location.py
 *.csv
 response.txt
 boxscoreresponse.txt
+/Data/*
