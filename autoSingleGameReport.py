@@ -618,7 +618,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	schedule = [(10, '20191111', 'SEA', 'SF'),(12, '20191124', 'SEA', 'PHI'),(13, '20191202', 'MIN', 'SEA'),(14, '20191208', 'SEA', 'LA'),(15, '20191215', 'SEA', 'CAR'),(16, '20191222', 'ARI', 'SEA'),(17, '20191229', 'SF', 'SEA')]
+	schedule = [(17, '20191229', 'WAS', 'DAL')]
 
 	for game in schedule:
 		date = game[1]
