@@ -465,7 +465,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 
 		postExpPts = driver.find_element_by_xpath('//*[@id="pi"]/div[2]/h3[1]').text
 
-		expPtsAdded = float(postExpPts.split(" ")[2]) - float(preExpPts.split(" ")[2])
+		expPtsAdded = abs(float(postExpPts.split(" ")[2]) - float(preExpPts.split(" ")[2]))
 
 		returnList.append([penalizedTeam, preExpPts.split(" ")[2], postExpPts.split(" ")[2], expPtsAdded])
 
