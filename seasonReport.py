@@ -7,9 +7,13 @@ folder = "19-20 " + team
 
 directory = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/2019-2020 NFL Season/" + folder
 
+section1Header = []
 section1 = [team,0,0,0,0,0,0]
+section2Header = []
 section2 = []
+section3Header = []
 section3 = [0,0,0,0,0,0,0,0,0,0,0]
+section4Header = []
 section4 = []
 
 for filename in os.listdir(directory):
@@ -77,6 +81,11 @@ for game in section2:
 for stat in section3:
     avgStat = stat/16
     section4.append(avgStat)
+
+seasonReportLoc = directory + "/" + folder + " Season.csv"
+
+with open(seasonReportLoc, 'w', newLine = '') as seasonReportFile:
+    writer = csv.writer(seasonReportFile, delimiter=',')
 
 
 
