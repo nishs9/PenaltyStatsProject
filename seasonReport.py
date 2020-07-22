@@ -1,63 +1,65 @@
 import csv
 import os
 
-team = "DET"
+team = "ATL"
 
 folder = "19-20 " + team
 
-directory = "C:/Users/snish/Desktop/PenaltyStatsProject/Data/2019-2020 NFL Season/" + folder
+directory = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/2019-2020 NFL Season/" + folder
 
 section1 = [team,0,0,0,0,0,0]
 section2 = []
 section3 = [0,0,0,0,0,0,0,0,0,0,0]
 section4 = []
 
-with open('Data/2019-2020 NFL Season/19-20 ARI/20190908-DET-ARI.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
+for filename in os.listdir(directory):
+    csvLoc = directory + "/" +filename 
+    with open(csvLoc) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
 
-    onPenAgg = False
+        onPenAgg = False
 
-    for row in csv_reader:
-        ##print(row)
-        if line_count == 0:
-            line_count += 1
-            continue
-
-        if line_count == 1:
-            section2.append(row)
-            line_count += 1
-
-            if row[1] == team:
-                if int(row[2]) > int(row[4]):
-                    section1[1] += 1
-                elif int(row[2]) == int(row[4]):
-                    section1[3] += 1
-                else:
-                    section1[2] += 1
-                section1[4] += int(row[2])
-                section1[5] += int(row[4])
-            else:
-                if int(row[2]) < int(row[4]):
-                    section1[1] += 1
-                elif int(row[2]) == int(row[4]):
-                    section1[3] += 1
-                else:
-                    section1[2] += 1
-                section1[4] += int(row[4])
-                section1[5] += int(row[2])
-
-            continue
-
-        if row == ['Team', 'tPEN(#)', 'tPEN(yards)', 'tDHP(#)', 'tDHP(yards)', 'tEPDHP', 'tDEP(#)', 'tDEP(yards)', 'tEPDEP', 'tOP(#)', 'tOP(yards)', 'tEPOP']:
-            onPenAgg = True
-
-        if onPenAgg == True:
-            if row[0] == team:
-                section2[len(section2) - 1].extend(row)
-                break
-            else:
+        for row in csv_reader:
+            ##print(row)
+            if line_count == 0:
+                line_count += 1
                 continue
+
+            if line_count == 1:
+                section2.append(row)
+                line_count += 1
+
+                if row[1] == team:
+                    if int(row[2]) > int(row[4]):
+                        section1[1] += 1
+                    elif int(row[2]) == int(row[4]):
+                        section1[3] += 1
+                    else:
+                        section1[2] += 1
+                    section1[4] += int(row[2])
+                    section1[5] += int(row[4])
+                else:
+                    if int(row[2]) < int(row[4]):
+                        section1[1] += 1
+                    elif int(row[2]) == int(row[4]):
+                        section1[3] += 1
+                    else:
+                        section1[2] += 1
+                    section1[4] += int(row[4])
+                    section1[5] += int(row[2])
+
+                continue
+
+            if row == ['Team', 'tPEN(#)', 'tPEN(yards)', 'tDHP(#)', 'tDHP(yards)', 'tEPDHP', 'tDEP(#)', 'tDEP(yards)', 'tEPDEP', 'tOP(#)', 'tOP(yards)', 'tEPOP']:
+                onPenAgg = True
+
+            if onPenAgg == True:
+                if row[0] == team:
+                    section2[len(section2) - 1].extend(row)
+                    break
+                else:
+                    continue
 
 for game in section2:
     section3[0] += int(game[6])
@@ -72,8 +74,17 @@ for game in section2:
     section3[9] += int(game[15])
     section3[10] += float(game[16])
 
+for stat in section3:
+    avgStat = stat/16
+    section4.append(avgStat)
+
 
 
 print(section1)
-print(section2)
+
+for line in section2:
+    print(line)
+
 print(section3)
+
+print(section4)
