@@ -6,13 +6,15 @@ import json
 
 ## list of tuples (week #, date, home team, away team)
 scheduleList = []
+team = "WAS"
+
 
 try:
     response = requests.get(
         url="https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games.json",
         params={
             "fordate": "20200716",
-            "team": "WAS"
+            "team": team
         },
         headers={
             "Authorization": "Basic " + base64.b64encode('{}:{}'.format(config.api_key,config.api_secret).encode('utf-8')).decode('ascii')
@@ -37,7 +39,9 @@ try:
         scheduleList.append(gameTup)
 
 
+    schedTxt = open(team + "_schedule.txt","w+")
     for schedule in scheduleList:
+        schedTxt.write(str(schedule) + "\n")
         print(schedule)
 
 
