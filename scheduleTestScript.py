@@ -35,7 +35,7 @@ try:
         awayTeam = game["schedule"]["awayTeam"]["abbreviation"]
         homeTeam = game["schedule"]["homeTeam"]["abbreviation"]
 
-        gameTup = (weekNumber, date, awayTeam, homeTeam)
+        gameTup = (weekNumber,date,awayTeam,homeTeam)
         scheduleList.append(gameTup)
 
 

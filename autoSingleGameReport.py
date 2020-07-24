@@ -618,13 +618,26 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	schedule = [(17, '20191229', 'WAS', 'DAL')]
+	team = "ARI"
+	schedule = []
+
+	schedTxt = open("Schedules/" + team + "_schedule.txt","r")
+	games = schedTxt.readlines()
+
+	for game in games:
+		gameTup = game[1:len(game)-2]
+		newList = gameTup.split(",")
+		newList[1] = newList[1][2:len(newList[1])-1]
+		newList[2] = newList[2][2:len(newList[2])-1]
+		newList[3] = newList[3][2:len(newList[3])-1]
+		schedule.append(newList)
 
 	for game in schedule:
 		date = game[1]
 		awayTeam = game[2]
 		homeTeam = game[3]
 
+		print("hello")
 
 		penaltyInfoTup = makePenaltyReport(date, awayTeam, homeTeam)
 		boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
