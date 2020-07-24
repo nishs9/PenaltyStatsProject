@@ -619,7 +619,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	layout = [[sg.Text('Enter team abbreviation:'),sg.InputText()]]
+	layout = [[sg.Text('Enter team abbreviation:'),sg.InputText()],[sg.Submit()]]
 	window = sg.Window('Single Game Reports for Full Season', layout)
 	event, values = window.read()
 	window.close()
@@ -642,8 +642,6 @@ if __name__ == '__main__':
 		date = game[1]
 		awayTeam = game[2]
 		homeTeam = game[3]
-
-		print("hello")
 
 		penaltyInfoTup = makePenaltyReport(date, awayTeam, homeTeam)
 		boxScoreInfo = boxScoreReport(date, awayTeam, homeTeam)
