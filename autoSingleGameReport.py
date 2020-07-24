@@ -4,6 +4,7 @@ import requests
 import json
 import csv
 import location
+import PySimpleGUI as sg
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -618,7 +619,12 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 
 if __name__ == '__main__':
 
-	team = "ARI"
+	layout = [[sg.Text('Enter team abbreviation:'),sg.InputText()]]
+	window = sg.Window('Single Game Reports for Full Season', layout)
+	event, values = window.read()
+	window.close()
+
+	team = values[0]
 	schedule = []
 
 	schedTxt = open("Schedules/" + team + "_schedule.txt","r")
@@ -655,3 +661,5 @@ if __name__ == '__main__':
 
 		for expPoint in expPointReport:
 			print(expPoint)
+
+	sg.popup("Game reports for " + team + "'s season complete!")
