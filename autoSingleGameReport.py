@@ -595,7 +595,7 @@ def csvIfy(date,awayTeam,homeTeam,boxScoreInfo,cumulPenInfo,penaltyReport,expPoi
 	section3.append([homeTeam, home_yardsPerPen, home_yardsPerDHP, home_expPointsPerDHP, home_yardsPerDEP, home_expPointsPerDEP, home_yardsPerOP, home_expPointsPerOP])
 	section3.append([awayTeam, away_yardsPerPen, away_yardsPerDHP, away_expPointsPerDHP, away_yardsPerDEP, away_expPointsPerDEP, away_yardsPerOP, away_expPointsPerOP])
 
-	with open(csvFileName, 'w', newline='') as csvfile:
+	with open("Data/"+csvFileName, 'w', newline='') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',')
 		writer.writerow(infoSectionHeader)
 		writer.writerow(infoSection)
