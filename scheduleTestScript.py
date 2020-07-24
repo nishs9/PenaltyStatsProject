@@ -6,7 +6,7 @@ import json
 
 ## list of tuples (week #, date, home team, away team)
 scheduleList = []
-team = "WAS"
+team = "ARI"
 
 
 try:
