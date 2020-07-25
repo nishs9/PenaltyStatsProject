@@ -17,7 +17,7 @@ section4Header = ["Pen/G","PenYards/G","DHP/G","DHPYards/G","EPDHP/G","DEP/G","D
 section4 = []
 
 for filename in os.listdir(directory):
-    csvLoc = directory + "/" +filename 
+    csvLoc = directory + "/" +filename
     with open(csvLoc) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0

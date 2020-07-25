@@ -621,8 +621,8 @@ if __name__ == '__main__':
 
 	layout = [[sg.Text('Enter team abbreviation:'),sg.InputText()],[sg.Submit()]]
 	window = sg.Window('Single Game Reports for Full Season', layout)
-	event, values = window.read()
-	window.close()
+	event, values = window.Read()
+	window.Close()
 
 	team = values[0]
 	schedule = []
