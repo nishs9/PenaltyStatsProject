@@ -1,11 +1,17 @@
 import csv
 import os
+import PySimpleGUI as sg
 
-team = "ARI"
+layout = [[sg.Text('Enter team abbreviation: '),sg.InputText()],[sg.Submit()]]
+window = sg.Window('Season Reports', layout)
+event, values = window.Read()
+window.Close()
+
+team = values[0]
 
 folder = "19-20 " + team
 
-directory = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/2019-2020 NFL Season/" + folder
+directory = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder
 
 section1Header = ["Team","W","L","T","PF","PA","PD"]
 section1 = [team,0,0,0,0,0,0]
@@ -86,7 +92,7 @@ for stat in section3:
     avgStat = stat/16
     section4.append(avgStat)
 
-seasonReportLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/2019-2020 NFL Season/" + team + "_Season.csv"
+seasonReportLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_Season.csv"
 
 with open(seasonReportLoc, 'w', newline = '') as seasonReportFile:
     writer = csv.writer(seasonReportFile, delimiter=',')
