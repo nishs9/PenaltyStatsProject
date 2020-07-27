@@ -334,7 +334,9 @@ def boxScoreReport(date, awayTeam, homeTeam):
 def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 	## intializing the web-scraping phase of the function
 	chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
-	driver = webdriver.Chrome(chromedriver_location)
+	options = webdriver.ChromeOptions()
+	options.add_argument("headless")
+	driver = webdriver.Chrome(chromedriver_location,options=options)
 
 	returnList = []
 
