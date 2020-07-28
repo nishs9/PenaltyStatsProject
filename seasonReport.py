@@ -65,7 +65,13 @@ for filename in os.listdir(directory):
                 onPenAgg = True
 
             if onPenAgg == True:
-                if row[0] == team:
+                if team == "OAK":
+                    if row[0] == "OAK" or row[0] == "LV":
+                        section2[len(section2) - 1].extend(row[1:])
+                        break
+                    else:
+                        continue
+                elif row[0] == team:
                     section2[len(section2) - 1].extend(row[1:])
                     break
                 else:
