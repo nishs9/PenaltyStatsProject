@@ -24,6 +24,10 @@ section4 = []
 
 for filename in os.listdir(directory):
     csvLoc = directory + "/" +filename
+    if filename == team + "_Season.csv":
+        continue
+    if filename == team + "_SeasonRaw.csv":
+        continue
     with open(csvLoc) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
@@ -77,8 +81,6 @@ for filename in os.listdir(directory):
                 else:
                     continue
 
-print(section2[0])
-
 section1[6] = section1[4] - section1[5]
 
 for game in section2:
@@ -99,6 +101,7 @@ for stat in section3:
     section4.append(avgStat)
 
 seasonReportLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_Season.csv"
+seasonReportRawLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_SeasonRaw.csv"
 
 with open(seasonReportLoc, 'w', newline = '') as seasonReportFile:
     writer = csv.writer(seasonReportFile, delimiter=',')
@@ -121,6 +124,17 @@ with open(seasonReportLoc, 'w', newline = '') as seasonReportFile:
 
     writer.writerow(section4Header)
     writer.writerow(section4)
+
+print("Summary report created!")
+
+with open(seasonReportRawLoc, 'w', newline = '') as seasonReportRawFile:
+    writer = csv.writer(seasonReportRawFile, delimiter = ',')
+    writer.writerow(section2Header)
+    for row in section2:
+        writer.writerow(row)
+
+print("Raw summary report created!")
+
 
 
 
