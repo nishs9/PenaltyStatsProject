@@ -1,6 +1,7 @@
 import csv
 import os
 import PySimpleGUI as sg
+from datetime import datetime
 
 layout = [[sg.Text('Enter team abbreviation: '),sg.InputText()],[sg.Submit()]]
 window = sg.Window('Season Reports', layout)
@@ -41,6 +42,7 @@ for filename in os.listdir(directory):
                 continue
 
             if line_count == 1:
+                row[0] = datetime.strptime(row[0], '%Y%m%d').strftime('%Y-%m-%d')
                 section2.append(row)
                 line_count += 1
 
