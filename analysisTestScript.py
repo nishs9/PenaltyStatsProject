@@ -6,6 +6,8 @@ seasonReportRaw = pd.read_csv("Data/19-20 ARI/ARI_SeasonRaw.csv")
 
 seasonReportRaw['Date'] = seasonReportRaw['Date'].astype('datetime64[ns]')
 
-print(seasonReportRaw.plot(x='Date',y=['tPEN(#)','tDHP(#)']))
+seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
+
+print(seasonReportRaw.plot(x='Date',y=['tEPPfP','tEPDHP','tEPDEP','tEPDOP']))
 
 plt.show()
