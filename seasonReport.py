@@ -135,9 +135,6 @@ with open(seasonReportRawLoc, 'w', newline = '') as seasonReportRawFile:
 
 print("Raw summary report created!")
 
-
-
-
 ##print(section1)
 
 ##for line in section2:
