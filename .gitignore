@@ -3,3 +3,4 @@ location.py
 *.csv
 *.txt
 /Data/*
+/Analysis/*
