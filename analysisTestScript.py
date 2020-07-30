@@ -9,13 +9,15 @@ from scipy import stats
 
 ##Scatterplot of Wins vs total expected points
 
-directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 ARI"
+for team in teamList.teamList:	
+	directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team 
 
-for filename in os.listdir(directory):
-	csvLoc = directory + "/" + filename
-	
-	if filename != team + "_SeasonRaw.csv":
-		continue
-	
-	seasonReportRaw = pd.read_csv(csvLoc)
+	for filename in os.listdir(directory):
+		csvLoc = directory + "/" + filename
+		
+		if filename != team + "_SeasonRaw.csv":
+			continue
+		
+		seasonReportRaw = pd.read_csv(csvLoc)
+		print(seasonReportRaw['tPEN(#)'].sum())
 
