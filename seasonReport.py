@@ -25,7 +25,7 @@ section4Header = ["Pen/G","PenYards/G","DHP/G","DHPYards/G","EPDHP/G","DEP/G","D
 section4 = []
 
 for filename in os.listdir(directory):
-    csvLoc = directory + "/" +filename
+    csvLoc = directory + "/" + filename
     if filename == team + "_Season.csv":
         continue
     if filename == team + "_SeasonRaw.csv":
