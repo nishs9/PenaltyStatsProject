@@ -19,6 +19,7 @@ def tPEN_tEPP_graph(year,team):
 	plotLegend.get_texts()[1].set_text('EPC due to Penalties')
 
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_tPENtEPPgraph.png",dpi=400)
+	plt.clf()
 
 def allExpPoints_graph(year,team):
 	seasonReportRaw = pd.read_csv("Data/" + year + " " + team + "/" + team + "_SeasonRaw.csv")
@@ -37,6 +38,7 @@ def allExpPoints_graph(year,team):
 	plotLegend.get_texts()[3].set_text('EPC due to OPs')
 
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsgraph.png",dpi=400)
+	plt.clf()
 
 def allPenalties_graph(year,team):
 	seasonReportRaw = pd.read_csv("Data/" + year + " " + team + "/" + team + "_SeasonRaw.csv")
@@ -54,12 +56,39 @@ def allPenalties_graph(year,team):
 
 
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesgraph.png",dpi=400)
+	plt.clf()
+
+def allExpPoints_boxplot(year,team):
+	seasonReportRaw = pd.read_csv("Data/" + year + " " + team + "/" + team + "_SeasonRaw.csv")
+
+	seasonReportRaw['Date'] = seasonReportRaw['Date'].astype('datetime64[ns]')
+
+	seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
+
+	seasonReportRaw.boxplot(column=['tEPPfP','tEPDHP','tEPDEP','tEPDOP'])
+
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400)
+	plt.clf()
+
+def allPenalties_boxplot(year,team):
+	seasonReportRaw = pd.read_csv("Data/" + year + " " + team + "/" + team + "_SeasonRaw.csv")
+
+	seasonReportRaw['Date'] = seasonReportRaw['Date'].astype('datetime64[ns]')
+
+	seasonReportRaw.boxplot(column=['tPEN(#)','tDHP(#)','tDEP(#)','tOP(#)'])
+
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesboxplot.png",dpi=400)
+	plt.clf()
 
 
 if __name__ == '__main__':
 	year = "19-20"
 	team = "ARI"
 
-	tPEN_tEPP_graph(year,team)
+	allExpPoints_boxplot(year,team)
+	allPenalties_boxplot(year,team)
+
 	allExpPoints_graph(year,team)
 	allPenalties_graph(year,team)
+
+	tPEN_tEPP_graph(year,team)

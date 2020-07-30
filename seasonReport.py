@@ -1,4 +1,5 @@
 import csv
+import location
 import os
 import PySimpleGUI as sg
 from datetime import datetime
@@ -12,7 +13,7 @@ team = values[0]
 
 folder = "19-20 " + team
 
-directory = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder
+directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder
 
 section1Header = ["Team","W","L","T","PF","PA","PD"]
 section1 = [team,0,0,0,0,0,0]
