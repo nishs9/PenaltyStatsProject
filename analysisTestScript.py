@@ -12,4 +12,11 @@ seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'
 
 seasonReportRaw.plot(x="Date",y=['tPEN(#)','tEPPfP'])
 
+plotLegend = plt.legend()
+
+plotLegend.get_texts()[0].set_text('# of Penalties')
+plotLegend.get_texts()[1].set_text('EPC due to Penalties')
+
+plt.savefig('test.png',dpi=400)
+
 plt.show()
