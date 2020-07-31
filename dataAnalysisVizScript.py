@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-def tPEN_tEPP_graph(year,team):
+def tPEN_tEPC_graph(year,team):
 	seasonReportRaw = pd.read_csv("Data/" + year + " " + team + "/" + team + "_SeasonRaw.csv")
 
 	seasonReportRaw['Date'] = seasonReportRaw['Date'].astype('datetime64[ns]')
@@ -83,7 +83,7 @@ def allPenalties_boxplot(year,team):
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesboxplot.png",dpi=400)
 	plt.clf()
 
-def wins_tEPP_graph(year):
+def wins_tEPC_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
@@ -124,10 +124,16 @@ def wins_tEPP_graph(year):
 	mx = np.max(x)
 	x1 = np.linspace(mn,mx,500)
 	y1 = gradient*x1+intercept
-	plt.plot(x,y,'ob')
-	plt.plot(x1,y1,'-r')
+	fig,ax = plt.subplots(1)
+	ax.plot(x,y,'ob')
+	ax.plot(x1,y1,'-r')
+	fig.subplots_adjust(bottom=0.3)
+	fig.text(0.1,0.15,"r-value: " + str(r_value))
+	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
 	plt.savefig("Analysis/Wins_vs_tEPP_graph.png",dpi=400)
 	plt.clf()
+
+def wins_tEPCPP
 
 
 if __name__ == '__main__':
@@ -142,4 +148,4 @@ if __name__ == '__main__':
 		allExpPoints_graph(year,team)
 		allPenalties_graph(year,team)
 
-		tPEN_tEPP_graph(year,team)
+		tPEN_tEPC_graph(year,team)
