@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-##Scatterplot of Wins vs total expected points
+##Scatterplot of Wins vs expected points per penalty
 
 
 ## { 'Team' : (Wins,Total Expected Points) }
@@ -36,13 +36,17 @@ for team in teamList.teamList:
 
 		seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
 
-		seasonInfoDict[team] = (totalwins, seasonReportRaw['tEPPfP'].sum())
+		totalPens = seasonReportRaw['tPEN(#)'].sum()
+
+		expPointsPerPen = seasonReportRaw['tEPPfP'].sum() / totalPens
+
+		seasonInfoDict[team] = (totalwins, expPointsPerPen)
 
 		##print(seasonReportRaw['tPEN(#)'].sum())
 		##print(seasonReportRaw['tEPPfP'].sum())
 		##print("\n")
 
-print(seasonInfoDict)
+##print(seasonInfoDict)
 
 winsList = []
 expPointsList = []
@@ -59,6 +63,12 @@ mn = np.min(x)
 mx = np.max(x)
 x1 = np.linspace(mn,mx,500)
 y1 = gradient*x1+intercept
-plt.plot(x,y,'ob')
-plt.plot(x1,y1,'-r')
+fig,ax = plt.subplots(1)
+ax.plot(x,y,'ob')
+ax.plot(x1,y1,'-r')
+fig.subplots_adjust(bottom=0.3)
+fig.text(0.1,0.15,"r-value: " + str(r_value))
+fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
+plt.savefig("test.png",dpi=400)
 plt.show()
+plt.clf()
