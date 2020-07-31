@@ -1,7 +1,10 @@
+import os
+import location
+import teamList
 import pandas as pd
 import csv
 import matplotlib.pyplot as plt
-import numpy as numpy
+import numpy as np
 from scipy import stats
 
 def tPEN_tEPP_graph(year,team):
@@ -80,15 +83,63 @@ def allPenalties_boxplot(year,team):
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesboxplot.png",dpi=400)
 	plt.clf()
 
+def wins_tEPP_graph(year):
+	seasonInfoDict = {}
+
+	for team in teamList.teamList:
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
+
+		seasonInfoDict[team] = ()
+
+		for filename in os.listdir(directory):
+			csvLoc = directory + "/" + filename
+
+			if filename != team + "_SeasonRaw.csv":
+				continue
+
+			seasonReportRaw = pd.read_csv(csvLoc)
+
+			homewins = seasonReportRaw[(seasonReportRaw["Home Team"] == team) & (seasonReportRaw["Home Score"] > seasonReportRaw["Away Score"])]
+
+			awaywins = seasonReportRaw[(seasonReportRaw["Away Team"] == team) & (seasonReportRaw["Away Score"] > seasonReportRaw["Home Score"])]
+
+			totalwins = homewins["Home Team"].count() + awaywins["Away Team"].count()
+
+			seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
+
+			seasonInfoDict[team] = (totalwins, seasonReportRaw['tEPPfP'].sum())
+
+	winsList = []
+	expPointsList = []
+
+	for team in seasonInfoDict.keys():
+		winsList.append(seasonInfoDict[team][0])
+		expPointsList.append(seasonInfoDict[team][1])
+
+	x = np.array(winsList)
+	y = np.array(expPointsList)
+
+	gradient, intercept, r_value, p_value, std_err = stats.linregress(x,y)
+	mn = np.min(x)
+	mx = np.max(x)
+	x1 = np.linspace(mn,mx,500)
+	y1 = gradient*x1+intercept
+	plt.plot(x,y,'ob')
+	plt.plot(x1,y1,'-r')
+	plt.savefig("Analysis/Wins_vs_tEPP_graph.png",dpi=400)
+	plt.clf()
+
 
 if __name__ == '__main__':
 	year = "19-20"
-	team = "ARI"
+	
+	wins_tEPP_graph(year)
 
-	allExpPoints_boxplot(year,team)
-	allPenalties_boxplot(year,team)
+	for team in teamList.teamList:
+		allExpPoints_boxplot(year,team)
+		allPenalties_boxplot(year,team)
 
-	allExpPoints_graph(year,team)
-	allPenalties_graph(year,team)
+		allExpPoints_graph(year,team)
+		allPenalties_graph(year,team)
 
-	tPEN_tEPP_graph(year,team)
+		tPEN_tEPP_graph(year,team)
