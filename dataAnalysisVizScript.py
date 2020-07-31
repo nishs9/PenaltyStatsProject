@@ -133,13 +133,17 @@ def wins_tEPC_graph(year):
 	plt.savefig("Analysis/Wins_vs_tEPP_graph.png",dpi=400)
 	plt.clf()
 
-def wins_tEPCPP
+def wins_tEPCPP_graph(year):
+	seasonInfoDict = {}
+
+	for team in teamList.teamList:
+		directory = "C:/Users/" + 
 
 
 if __name__ == '__main__':
 	year = "19-20"
 	
-	wins_tEPP_graph(year)
+	wins_tEPC_graph(year)
 
 	for team in teamList.teamList:
 		allExpPoints_boxplot(year,team)
