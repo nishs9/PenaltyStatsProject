@@ -159,7 +159,7 @@ def wins_tEPCPP_graph(year):
 
 			totalPens = seasonReportRaw['tPEN(#)'].sum()
 
-			expPointsPerPen = seasonReportRaw['tEPPfp'].sum() / totalPens
+			expPointsPerPen = seasonReportRaw['tEPPfP'].sum() / totalPens
 
 			seasonInfoDict[team] = (totalwins, expPointsPerPen)
 
@@ -191,6 +191,7 @@ if __name__ == '__main__':
 	year = "19-20"
 	
 	wins_tEPC_graph(year)
+	wins_tEPCPP_graph(year)
 
 	for team in teamList.teamList:
 		allExpPoints_boxplot(year,team)
