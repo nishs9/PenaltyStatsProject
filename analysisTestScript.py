@@ -13,17 +13,17 @@ from scipy import stats
 ## { 'Team' : (Wins,Total Expected Points) }
 seasonInfoDict = {}
 
-for team in teamList.teamList:	
-	directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team 
+for team in teamList.teamList:
+	directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
 
 	seasonInfoDict[team] = ()
 
 	for filename in os.listdir(directory):
 		csvLoc = directory + "/" + filename
-		
+
 		if filename != team + "_SeasonRaw.csv":
 			continue
-		
+
 		seasonReportRaw = pd.read_csv(csvLoc)
 
 		homewins = seasonReportRaw[(seasonReportRaw["Home Team"] == team) & (seasonReportRaw["Home Score"] > seasonReportRaw["Away Score"])]
@@ -64,11 +64,11 @@ mx = np.max(x)
 x1 = np.linspace(mn,mx,500)
 y1 = gradient*x1+intercept
 fig,ax = plt.subplots(1)
-ax.plot(x,y,'ob')
+##ax.plot(x,y,'ob')
 ax.plot(x1,y1,'-r')
 fig.subplots_adjust(bottom=0.3)
 fig.text(0.1,0.15,"r-value: " + str(r_value))
 fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-plt.savefig("test.png",dpi=400)
+##plt.savefig("test.png",dpi=400)
 plt.show()
 plt.clf()
