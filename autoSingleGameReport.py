@@ -12,7 +12,7 @@ from selenium.webdriver.support.ui import Select
 def makePenaltyReport(date, awayTeam, homeTeam):
 	gameParam = date + "-" + awayTeam + "-" + homeTeam
 
-	pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + gameParam + '/playbyplay.json'
+	pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2018-regular/games/' + gameParam + '/playbyplay.json'
 
 	returnDict = {}
 
@@ -280,7 +280,7 @@ def boxScoreReport(date, awayTeam, homeTeam):
 
 	try:
 		response = requests.get(
-			url='https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + gameParam + '/boxscore.json',
+			url='https://api.mysportsfeeds.com/v2.1/pull/nfl/2018-regular/games/' + gameParam + '/boxscore.json',
 			params={
 				"fordate": date
 			},
@@ -334,9 +334,7 @@ def boxScoreReport(date, awayTeam, homeTeam):
 def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 	## intializing the web-scraping phase of the function
 	chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
-	options = webdriver.ChromeOptions()
-	options.add_argument("headless")
-	driver = webdriver.Chrome(chromedriver_location,options=options)
+	driver = webdriver.Chrome(chromedriver_location)
 
 	returnList = []
 

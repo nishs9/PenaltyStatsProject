@@ -12,7 +12,7 @@ from selenium.webdriver.support.ui import Select
 def penaltyReport(date, awayTeam, homeTeam):
 	gameParam = date + "-" + awayTeam + "-" + homeTeam
 
-	pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + gameParam + '/playbyplay.json'
+	pullUrl = 'https://api.mysportsfeeds.com/v2.1/pull/nfl/2018-regular/games/' + gameParam + '/playbyplay.json'
 
 	returnDict = {}
 
@@ -280,7 +280,7 @@ def boxScoreReport(date, awayTeam, homeTeam):
 
 	try:
 		response = requests.get(
-			url='https://api.mysportsfeeds.com/v2.1/pull/nfl/2019-regular/games/' + gameParam + '/boxscore.json',
+			url='https://api.mysportsfeeds.com/v2.1/pull/nfl/2018-regular/games/' + gameParam + '/boxscore.json',
 			params={
 				"fordate": date
 			},
@@ -424,7 +424,8 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 				select.select_by_visible_text("Opp")
 
 		driver.find_element_by_xpath(yard_line).send_keys(str(preFieldPos[1]))
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
+		print('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input')
+		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
 
 		driver.find_element_by_xpath(submit).click()
@@ -459,7 +460,8 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 			driver.find_element_by_xpath(yard_line).send_keys("1")
 		else:
 			driver.find_element_by_xpath(yard_line).send_keys(postFieldPos[1])
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
+		print('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input')
+		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
 
 		driver.find_element_by_xpath(submit).click()
@@ -621,8 +623,8 @@ if __name__ == '__main__':
 	#create the window
 	layout = [[sg.Text('Enter game info:')], [sg.Text('Date:'), sg.InputText()], [sg.Text('Away Team:'), sg.InputText()], [sg.Text('Home Team:'), sg.InputText()], [sg.Submit()]]
 	window = sg.Window('Single Game Report', layout)
-	event, values = window.read()
-	window.close()
+	event, values = window.Read()
+	window.Close()
 
 	date = values[0]
 	awayTeam = values[1]

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-##Scatterplot of Wins vs expected points per penalty
+##Scatterplot of Wins vs total penalties
 
 
 ## { 'Team' : (Wins,Total Expected Points) }
@@ -32,15 +32,9 @@ for team in teamList.teamList:
 
 		totalwins = homewins["Home Team"].count() + awaywins["Away Team"].count()
 
-		##print(str(homewins["Home Team"].count() + awaywins["Away Team"].count()))
-
-		seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
-
 		totalPens = seasonReportRaw['tPEN(#)'].sum()
 
-		expPointsPerPen = seasonReportRaw['tEPPfP'].sum() / totalPens
-
-		seasonInfoDict[team] = (totalwins, expPointsPerPen)
+		seasonInfoDict[team] = (totalwins, totalPens)
 
 		##print(seasonReportRaw['tPEN(#)'].sum())
 		##print(seasonReportRaw['tEPPfP'].sum())
@@ -64,7 +58,7 @@ mx = np.max(x)
 x1 = np.linspace(mn,mx,500)
 y1 = gradient*x1+intercept
 fig,ax = plt.subplots(1)
-##ax.plot(x,y,'ob')
+ax.plot(x,y,'ob')
 ax.plot(x1,y1,'-r')
 fig.subplots_adjust(bottom=0.3)
 fig.text(0.1,0.15,"r-value: " + str(r_value))
