@@ -16,44 +16,79 @@ driver = webdriver.Chrome(chromedriver_location)
 set_viewport_size(driver,1920,1000)
 
 driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
-driver.execute_script("window.scrollTo(0, 150)")
 
-score_diff = '//*[@id="wp_calc"]/div/div[1]/div[1]/input'
+all_options = driver.find_elements_by_tag_name('input')
 
-##document.querySelector("#wp_calc > div > div.fields > div:nth-child(3) > div:nth-child(2) > div.choicefield > input[type=radio]")
+print(len(all_options))
 
-quarter1 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[1]/div[1]/input'
-quarter2 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[2]/div[1]/input'
-quarter3 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[3]/div[1]/input'
-quarter4 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[4]/div[1]/input'
-quarterOT = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[5]/div[1]/input'
+##score differential
+all_options[6].send_keys('10')
 
-time_min = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[1]'
-time_sec = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[2]'
+##Quarter
+all_options[8].click()
+all_options[9].click()
+all_options[10].click()
+all_options[11].click()
+all_options[12].click()
 
-side_of_field = '//*[@id="field"]'
-yard_line = '//*[@id="wp_calc"]/div/div[1]/div[5]/input'
+## minutes and seconds
+all_options[13].send_keys('3')
+all_options[14].send_keys('44')
 
-down1 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[1]/div[1]/input'
-down2 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[2]/div[1]/input'
-down3 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[3]/div[1]/input'
-down4 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[4]/div[1]/input'
-yards_to_go = '//*[@id="wp_calc"]/div/div[1]/div[7]/input'
+## yard line
+all_options[15].send_keys('34')
 
-submit = '//*[@id="wp_calc"]/div/div[2]/div/input'
+##down
+all_options[16].click()
+all_options[17].click()
+all_options[18].click()
+all_options[19].click()
+
+##yards to go
+all_options[20].send_keys('8')
+
+##submit
+##all_options[22].click()
 
 
-driver.find_element_by_xpath(score_diff).send_keys("-1")
-driver.find_element_by_css_selector('#wp_calc > div > div.fields > div:nth-child(3) > div:nth-child(2) > div.choicefield > input[type=radio]').click()
-driver.find_element_by_xpath(time_min).send_keys("3")
-driver.find_element_by_xpath(time_sec).send_keys("44")
+# driver.execute_script("window.scrollTo(0, 150)")
 
-select = Select(driver.find_element_by_xpath(side_of_field))
-select.select_by_visible_text("Opp")
+# score_diff = '//*[@id="wp_calc"]/div/div[1]/div[1]/input'
 
-driver.find_element_by_xpath(yard_line).send_keys("10")
-driver.find_element_by_xpath(down3).click()
-driver.find_element_by_xpath(yards_to_go).send_keys('3')
+# ##document.querySelector("#wp_calc > div > div.fields > div:nth-child(3) > div:nth-child(2) > div.choicefield > input[type=radio]")
+
+# quarter1 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[1]/div[1]/input'
+# quarter2 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[2]/div[1]/input'
+# quarter3 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[3]/div[1]/input'
+# quarter4 = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[4]/div[1]/input'
+# quarterOT = '//*[@id="wp_calc"]/div/div[1]/div[3]/div[5]/div[1]/input'
+
+# time_min = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[1]'
+# time_sec = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[2]'
+
+# side_of_field = '//*[@id="field"]'
+# yard_line = '//*[@id="wp_calc"]/div/div[1]/div[5]/input'
+
+# down1 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[1]/div[1]/input'
+# down2 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[2]/div[1]/input'
+# down3 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[3]/div[1]/input'
+# down4 = '//*[@id="wp_calc"]/div/div[1]/div[6]/div[4]/div[1]/input'
+# yards_to_go = '//*[@id="wp_calc"]/div/div[1]/div[7]/input'
+
+# submit = '//*[@id="wp_calc"]/div/div[2]/div/input'
+
+
+# driver.find_element_by_xpath(score_diff).send_keys("-1")
+# driver.find_element_by_css_selector('#wp_calc > div > div.fields > div:nth-child(3) > div:nth-child(2) > div.choicefield > input[type=radio]').click()
+# driver.find_element_by_xpath(time_min).send_keys("3")
+# driver.find_element_by_xpath(time_sec).send_keys("44")
+
+# select = Select(driver.find_element_by_xpath(side_of_field))
+# select.select_by_visible_text("Opp")
+
+# driver.find_element_by_xpath(yard_line).send_keys("10")
+# driver.find_element_by_xpath(down3).click()
+# driver.find_element_by_xpath(yards_to_go).send_keys('3')
 
 # driver.find_element_by_xpath(submit).click()
 
