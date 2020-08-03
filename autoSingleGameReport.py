@@ -747,4 +747,4 @@ if __name__ == '__main__':
 		for expPoint in expPointReport:
 			print(expPoint)
 
-	sg.popup("Game reports for " + team + "'s season complete!")
+	sg.Popup("Game reports for " + team + "'s season complete!")
