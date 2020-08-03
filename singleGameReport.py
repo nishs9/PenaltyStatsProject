@@ -62,7 +62,7 @@ def penaltyReport(date, awayTeam, homeTeam):
 		##penalty data extraction
 		for play in jsonResp["plays"]:
 			keys = list(play.keys())
-			##print(play["description"])
+			print(play["description"])
 			playType = keys[1]
 			##getting data from pre-snap fouls (offside, false start, illegal formation, etc.)
 			if playType == "penalty":
@@ -87,10 +87,13 @@ def penaltyReport(date, awayTeam, homeTeam):
 				##down and distance tuple (down, yards remaining)
 				downAndDistance =  (down, yardsToGo)
 
+				##Peralties where enforced field position is the same as pre-penalty field position
+				exceptionPenalties = ['Neutral Zone Infraction','Encroachment']
+
 				##field position tuple (side of field, yard line)
 				preFieldPos = [sideOfField, yardLine]
 				enforcedFieldPos = preFieldPos
-				if play["description"] != "Neutral Zone Infraction":
+				if play["description"] not in exceptionPenalties:
 					enforcedFieldPos = [play[playType]["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], play[playType]["penalty"]["enforcedAtPosition"]["yardLine"]]
 				postFieldPos = [sideOfField, yardLine]
 

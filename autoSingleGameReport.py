@@ -87,10 +87,13 @@ def makePenaltyReport(date, awayTeam, homeTeam):
 				##down and distance tuple (down, yards remaining)
 				downAndDistance =  (down, yardsToGo)
 
+				##Penalties where enforced field position is the same as pre-penalty field position
+				exceptionPenalties = ['Neutral Zone Infraction','Encroachment']
+
 				##field position tuple (side of field, yard line)
 				preFieldPos = [sideOfField, yardLine]
 				enforcedFieldPos = preFieldPos
-				if play["description"] != "Neutral Zone Infraction":
+				if play["description"] not in exceptionPenalties:
 					enforcedFieldPos = [play[playType]["penalty"]["enforcedAtPosition"]["team"]["abbreviation"], play[playType]["penalty"]["enforcedAtPosition"]["yardLine"]]
 				postFieldPos = [sideOfField, yardLine]
 
@@ -331,14 +334,23 @@ def boxScoreReport(date, awayTeam, homeTeam):
 	except requests.exceptions.RequestException:
 		print('HTTP Request failed')
 
+def set_viewport_size(driver, width, height):
+    window_size = driver.execute_script("""
+        return [window.outerWidth - window.innerWidth + arguments[0],
+          window.outerHeight - window.innerHeight + arguments[1]];
+        """, width, height)
+    driver.set_window_size(*window_size)
+
 def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 	## intializing the web-scraping phase of the function
 	chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
 	driver = webdriver.Chrome(chromedriver_location)
+	set_viewport_size(driver,1920,1000)
 
 	returnList = []
 
 	for penalty in penaltyReport:
+		print(penalty)
 		teamInPoss = ""
 		penalizedTeam = penalty[0]
 		penaltyType = penalty[1]
@@ -392,55 +404,97 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 
 		## NOTE: This calculator takes everything into account from the team in possession's perspective
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
-		driver.implicitly_wait(0.5)
-		driver.execute_script("window.scrollTo(0, 300)")
+
+		all_inputs = driver.find_elements_by_tag_name('input')
 
 		## Each of the form fields/buttons
-		score_diff = '//*[@id="wp_calc"]/div/div[1]/div[1]/input'
-		time_min = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[1]'
-		time_sec = '//*[@id="wp_calc"]/div/div[1]/div[4]/input[2]'
-		side_of_field = '//*[@id="field"]'
-		yard_line = '//*[@id="wp_calc"]/div/div[1]/div[5]/input'
-		yards_to_go = '//*[@id="wp_calc"]/div/div[1]/div[7]/input'
-		submit = '//*[@id="wp_calc"]/div/div[2]/div/input'
+		score_diff = all_inputs[6]
+		quarter1 = all_inputs[8]
+		quarter2 = all_inputs[9]
+		quarter3 = all_inputs[10]
+		quarter4 = all_inputs[11]
+		quarter5 = all_inputs[12]
+		time_min = all_inputs[13]
+		time_sec = all_inputs[14]
+		side_of_field = Select(driver.find_element_by_id('field'))
+		yard_line = all_inputs[15]
+		down1 = all_inputs[16]
+		down2 = all_inputs[17]
+		down3 = all_inputs[18]
+		down4 = all_inputs[19]
+		yards_to_go = all_inputs[20]
+		submit = all_inputs[21]
 
 		preExpPts = 0
 
-		driver.find_element_by_xpath(score_diff).send_keys(str(scoreDifferential))
-		driver.implicitly_wait(0.5)
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[3]/div[' + str(quarter) + ']/div[1]/input').click()
-		driver.find_element_by_xpath(time_min).send_keys(str(int(clock/60)))
-		driver.find_element_by_xpath(time_sec).send_keys(str(clock%60))
+		score_diff.send_keys(str(scoreDifferential))
+		print(quarter)
+
+		if quarter == 1:
+			quarter1.click()
+		elif quarter == 2:
+			quarter2.click()
+		elif quarter == 3:
+			quarter3.click()
+		elif quarter == 4:
+			quarter4.click()
+		else:
+			quarter5.click()
+
+		time_min.send_keys(str(int(clock/60)))
+		time_sec.send_keys(str(clock%60))
 
 		if teamInPoss == "awayTeam":
 			if awayTeam == preFieldPos[0]:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Team")
+				side_of_field.select_by_visible_text("Team")
 			else:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Opp")
+				side_of_field.select_by_visible_text("Opp")
 		else:
 			if homeTeam == preFieldPos[0]:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Team")
+				side_of_field.select_by_visible_text("Team")
 			else:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Opp")
+				side_of_field.select_by_visible_text("Opp")
 
-		driver.find_element_by_xpath(yard_line).send_keys(str(preFieldPos[1]))
-		driver.implicitly_wait(0.5)
-		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
-		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
+		yard_line.send_keys(str(preFieldPos[1]))
 
-		driver.find_element_by_xpath(submit).click()
+		if down == 1:
+			down1.click()
+		elif down == 2:
+			down2.click()
+		elif down == 3:
+			down3.click()
+		else:
+			down4.click()
+
+		yards_to_go.send_keys(str(distance))
+
+		submit.click()
 
 		preExpPts = driver.find_element_by_xpath('//*[@id="pi"]/div[2]/h3[1]').text
 
 		postExpPts = 0
 
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
-		driver.implicitly_wait(0.5)
-		driver.execute_script("window.scrollTo(0, 300)")
+
+		all_inputs = driver.find_elements_by_tag_name('input')
+
+		## Each of the form fields/buttons
+		score_diff = all_inputs[6]
+		quarter1 = all_inputs[8]
+		quarter2 = all_inputs[9]
+		quarter3 = all_inputs[10]
+		quarter4 = all_inputs[11]
+		quarter5 = all_inputs[12]
+		time_min = all_inputs[13]
+		time_sec = all_inputs[14]
+		side_of_field = Select(driver.find_element_by_id('field'))
+		yard_line = all_inputs[15]
+		down1 = all_inputs[16]
+		down2 = all_inputs[17]
+		down3 = all_inputs[18]
+		down4 = all_inputs[19]
+		yards_to_go = all_inputs[20]
+		submit = all_inputs[21]
 
 		if penaltyType == 'DHP':
 			distance = distance + penaltyYards
@@ -451,36 +505,51 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 			else:
 				distance = distance - penaltyYards
 
-		driver.find_element_by_xpath(score_diff).send_keys(str(scoreDifferential))
-		driver.implicitly_wait(0.5)
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[3]/div[' + str(quarter) + ']/div[1]/input').click()
-		driver.find_element_by_xpath(time_min).send_keys(str(int(clock/60)))
-		driver.find_element_by_xpath(time_sec).send_keys(str(clock%60))
+		score_diff.send_keys(str(scoreDifferential))
+		print(quarter)
+
+		if quarter == 1:
+			quarter1.click()
+		elif quarter == 2:
+			quarter2.click()
+		elif quarter == 3:
+			quarter3.click()
+		elif quarter == 4:
+			quarter4.click()
+		else:
+			quarter5.click()
+
+		time_min.send_keys(str(int(clock/60)))
+		time_sec.send_keys(str(clock%60))
 
 		if teamInPoss == "awayTeam":
 			if awayTeam == postFieldPos[0]:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Team")
+				side_of_field.select_by_visible_text("Team")
 			else:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Opp")
+				side_of_field.select_by_visible_text("Opp")
 		else:
 			if homeTeam == postFieldPos[0]:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Team")
+				side_of_field.select_by_visible_text("Team")
 			else:
-				select = Select(driver.find_element_by_xpath(side_of_field))
-				select.select_by_visible_text("Opp")
+				side_of_field.select_by_visible_text("Opp")
 
 		if postFieldPos[1] <= 0:
-			driver.find_element_by_xpath(yard_line).send_keys("1")
+			yard_line.send_keys("1")
 		else:
-			driver.find_element_by_xpath(yard_line).send_keys(postFieldPos[1])
-		driver.implicitly_wait(0.5)
-		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
-		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
+			yard_line.send_keys(postFieldPos[1])
 
-		driver.find_element_by_xpath(submit).click()
+		if down == 1:
+			down1.click()
+		elif down == 2:
+			down2.click()
+		elif down == 3:
+			down3.click()
+		else:
+			down4.click()
+
+		yards_to_go.send_keys(str(distance))
+
+		submit.click()
 
 		postExpPts = driver.find_element_by_xpath('//*[@id="pi"]/div[2]/h3[1]').text
 
