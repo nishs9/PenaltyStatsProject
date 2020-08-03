@@ -18,6 +18,8 @@ set_viewport_size(driver,1920,1000)
 driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
 
 all_options = driver.find_elements_by_tag_name('input')
+select = Select(driver.find_element_by_id('field'))
+select.select_by_visible_text('Opp')
 
 print(len(all_options))
 
