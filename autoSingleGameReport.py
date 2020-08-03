@@ -342,6 +342,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 		teamInPoss = ""
 		penalizedTeam = penalty[0]
 		penaltyType = penalty[1]
+		penaltyYards = penalty[2]
 		preFieldPos = penalty[3]
 		postFieldPos = penalty[5]
 		quarter = penalty[6][0]
@@ -391,6 +392,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 
 		## NOTE: This calculator takes everything into account from the team in possession's perspective
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+		driver.implicitly_wait(0.5)
 		driver.execute_script("window.scrollTo(0, 300)")
 
 		## Each of the form fields/buttons
@@ -405,6 +407,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 		preExpPts = 0
 
 		driver.find_element_by_xpath(score_diff).send_keys(str(scoreDifferential))
+		driver.implicitly_wait(0.5)
 		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[3]/div[' + str(quarter) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(time_min).send_keys(str(int(clock/60)))
 		driver.find_element_by_xpath(time_sec).send_keys(str(clock%60))
@@ -425,7 +428,8 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 				select.select_by_visible_text("Opp")
 
 		driver.find_element_by_xpath(yard_line).send_keys(str(preFieldPos[1]))
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
+		driver.implicitly_wait(0.5)
+		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
 
 		driver.find_element_by_xpath(submit).click()
@@ -435,9 +439,20 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 		postExpPts = 0
 
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+		driver.implicitly_wait(0.5)
 		driver.execute_script("window.scrollTo(0, 300)")
 
+		if penaltyType == 'DHP':
+			distance = distance + penaltyYards
+		else:
+			if penaltyYards >= distance:
+				down = 1
+				distance = 10
+			else:
+				distance = distance - penaltyYards
+
 		driver.find_element_by_xpath(score_diff).send_keys(str(scoreDifferential))
+		driver.implicitly_wait(0.5)
 		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[3]/div[' + str(quarter) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(time_min).send_keys(str(int(clock/60)))
 		driver.find_element_by_xpath(time_sec).send_keys(str(clock%60))
@@ -461,7 +476,8 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 			driver.find_element_by_xpath(yard_line).send_keys("1")
 		else:
 			driver.find_element_by_xpath(yard_line).send_keys(postFieldPos[1])
-		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
+		driver.implicitly_wait(0.5)
+		driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/form/div/div[1]/div[6]/div[' + str(down) + ']/div[1]/input').click()
 		driver.find_element_by_xpath(yards_to_go).send_keys(str(distance))
 
 		driver.find_element_by_xpath(submit).click()
