@@ -392,11 +392,14 @@ if __name__ == '__main__':
 
 	wins_tEPC_graph(year)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	wins_tEPCPP_graph(year)
 	wins_tPEN_graph(year)
 	wins_tDHP_graph(year)
 	wins_tDEP_graph(year)
 	wins_tOP_graph(year)
+=======
+>>>>>>> parent of db5200d... Update dataAnalysisVizScript.py
 =======
 >>>>>>> parent of db5200d... Update dataAnalysisVizScript.py
 
