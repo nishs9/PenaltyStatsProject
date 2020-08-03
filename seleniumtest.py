@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import Select
 chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
 driver = webdriver.Chrome(chromedriver_location)
 driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+driver.execute_script("window.scrollTo(0, 300)")
 
 score_diff = '//*[@id="wp_calc"]/div/div[1]/div[1]/input'
 
@@ -49,6 +50,7 @@ expPoints1 = driver.find_element_by_xpath('//*[@id="pi"]/div[2]/h3[1]').text
 print("Pre-penalty EP: " + expPoints1.split(" ")[2])
 
 driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+driver.execute_script("window.scrollTo(0, 300)")
 
 driver.find_element_by_xpath(score_diff).send_keys("-1")
 driver.find_element_by_xpath(quarter4).click()
@@ -59,7 +61,7 @@ select = Select(driver.find_element_by_xpath(side_of_field))
 select.select_by_visible_text("Opp")
 
 driver.find_element_by_xpath(yard_line).send_keys("5")
-driver.find_element_by_xpath(down1).click()
+driver.find_element_by_xpath(down3).click()
 driver.find_element_by_xpath(yards_to_go).send_keys('5')
 
 driver.find_element_by_xpath(submit).click()

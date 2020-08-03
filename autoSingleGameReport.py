@@ -391,6 +391,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 
 		## NOTE: This calculator takes everything into account from the team in possession's perspective
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+		driver.execute_script("window.scrollTo(0, 300)")
 
 		## Each of the form fields/buttons
 		score_diff = '//*[@id="wp_calc"]/div/div[1]/div[1]/input'
@@ -434,6 +435,7 @@ def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 		postExpPts = 0
 
 		driver.get("https://www.pro-football-reference.com/play-index/win_prob.cgi")
+		driver.execute_script("window.scrollTo(0, 300)")
 
 		driver.find_element_by_xpath(score_diff).send_keys(str(scoreDifferential))
 		driver.find_element_by_xpath('//*[@id="wp_calc"]/div/div[1]/div[3]/div[' + str(quarter) + ']/div[1]/input').click()
