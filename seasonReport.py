@@ -11,7 +11,7 @@ window.Close()
 
 team = values[0]
 
-folder = "19-20 " + team
+folder = "18-19 " + team
 
 directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder
 
@@ -26,10 +26,10 @@ section4 = []
 
 for filename in os.listdir(directory):
     csvLoc = directory + "/" + filename
-    if filename == team + "_Season.csv":
-        continue
-    if filename == team + "_SeasonRaw.csv":
-        continue
+    # if filename == team + "_Season.csv":
+    #     continue
+    # if filename == team + "_SeasonRaw.csv":
+    #     continue
     with open(csvLoc) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
@@ -103,8 +103,8 @@ for stat in section3:
     avgStat = stat/16
     section4.append(avgStat)
 
-seasonReportLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_Season.csv"
-seasonReportRawLoc = "C:/Users/analy/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_SeasonRaw.csv"
+seasonReportLoc = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_Season.csv"
+seasonReportRawLoc = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_SeasonRaw.csv"
 
 with open(seasonReportLoc, 'w', newline = '') as seasonReportFile:
     writer = csv.writer(seasonReportFile, delimiter=',')
