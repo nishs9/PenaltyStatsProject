@@ -137,7 +137,7 @@ def wins_tEPCPP_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
-		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
 
 		seasonInfoDict[team] = ()
 
@@ -159,7 +159,7 @@ def wins_tEPCPP_graph(year):
 
 			totalPens = seasonReportRaw['tPEN(#)'].sum()
 
-			expPointsPerPen = seasonReportRaw['tEPPfp'].sum() / totalPens
+			expPointsPerPen = seasonReportRaw['tEPPfP'].sum() / totalPens
 
 			seasonInfoDict[team] = (totalwins, expPointsPerPen)
 
@@ -191,7 +191,7 @@ def wins_tPEN_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
-		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
 
 		seasonInfoDict[team] = ()
 
@@ -241,7 +241,7 @@ def wins_tDHP_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
-		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
 
 		seasonInfoDict[team] = ()
 
@@ -291,7 +291,7 @@ def wins_tDEP_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
-		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
 
 		seasonInfoDict[team] = ()
 
@@ -341,7 +341,7 @@ def wins_tOP_graph(year):
 	seasonInfoDict = {}
 
 	for team in teamList.teamList:
-		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/19-20 " + team
+		directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + year + " " + team
 
 		seasonInfoDict[team] = ()
 
@@ -388,20 +388,14 @@ def wins_tOP_graph(year):
 	plt.clf()
 
 if __name__ == '__main__':
-	year = "19-20"
+	year = "18-19"
 
 	wins_tEPC_graph(year)
-<<<<<<< HEAD
-<<<<<<< HEAD
 	wins_tEPCPP_graph(year)
 	wins_tPEN_graph(year)
 	wins_tDHP_graph(year)
 	wins_tDEP_graph(year)
 	wins_tOP_graph(year)
-=======
->>>>>>> parent of db5200d... Update dataAnalysisVizScript.py
-=======
->>>>>>> parent of db5200d... Update dataAnalysisVizScript.py
 
 	for team in teamList.teamList:
 		allExpPoints_boxplot(year,team)

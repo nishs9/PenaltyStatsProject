@@ -4,7 +4,7 @@ import requests
 import json
 import teamList
 
-year = "2018"
+year = "2019"
 
 for team in teamList.teamList:
     ## list of tuples (week #, date, home team, away team)
