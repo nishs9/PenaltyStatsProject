@@ -11,7 +11,7 @@ window.Close()
 
 team = values[0]
 
-folder = "18-19 " + team
+folder = "19-20 " + team
 
 directory = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder
 
