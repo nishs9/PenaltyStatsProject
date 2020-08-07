@@ -130,7 +130,7 @@ def wins_tEPC_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tEPP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tEPP_graph.png",dpi=400)
 	plt.clf()
 
 def wins_tEPCPP_graph(year):
@@ -184,7 +184,7 @@ def wins_tEPCPP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tEPCPP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tEPCPP_graph.png",dpi=400)
 	plt.clf()
 
 def wins_tPEN_graph(year):
@@ -234,7 +234,7 @@ def wins_tPEN_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tPEN_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tPEN_graph.png",dpi=400)
 	plt.clf()
 
 def wins_tDHP_graph(year):
@@ -284,7 +284,7 @@ def wins_tDHP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tDHP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tDHP_graph.png",dpi=400)
 	plt.clf()
 
 def wins_tDEP_graph(year):
@@ -334,7 +334,7 @@ def wins_tDEP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tDEP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "Wins_vs_tDEP_graph.png",dpi=400)
 	plt.clf()
 
 def wins_tOP_graph(year):
@@ -384,7 +384,7 @@ def wins_tOP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/Wins_vs_tOP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "Wins_vs_tOP_graph.png",dpi=400)
 	plt.clf()
 
 if __name__ == '__main__':

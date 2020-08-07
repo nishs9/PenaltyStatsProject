@@ -7,6 +7,7 @@ import location
 import PySimpleGUI as sg
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 
 ## returns a tuple with the cumulative penalty info and penalty report
 def makePenaltyReport(date, awayTeam, homeTeam):
@@ -343,8 +344,10 @@ def set_viewport_size(driver, width, height):
 
 def expectedPointsCalc(awayTeam, homeTeam, penaltyReport, boxScoreInfo):
 	## intializing the web-scraping phase of the function
+	chrome_options = Options()
+	chrome_options.add_argument('--headless')
 	chromedriver_location = "C:/Users/" + location.location + "/Downloads/chromedriver_win32/chromedriver"
-	driver = webdriver.Chrome(chromedriver_location)
+	driver = webdriver.Chrome(chromedriver_location,options=chrome_options)
 	set_viewport_size(driver,1920,1000)
 
 	returnList = []
