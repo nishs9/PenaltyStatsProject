@@ -405,3 +405,5 @@ if __name__ == '__main__':
 		allPenalties_graph(year,team)
 
 		tPEN_tEPC_graph(year,team)
+
+		print(team + "'s figures created!")
