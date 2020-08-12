@@ -388,7 +388,7 @@ def wins_tOP_graph(year):
 	plt.clf()
 
 if __name__ == '__main__':
-	year = "18-19"
+	year = "19-20"
 
 	wins_tEPC_graph(year)
 	wins_tEPCPP_graph(year)
