@@ -68,7 +68,9 @@ def allExpPoints_boxplot(year,team):
 
 	seasonReportRaw['tEPPfP'] = seasonReportRaw['tEPDHP'] + seasonReportRaw['tEPDEP'] + seasonReportRaw['tEPDOP']
 
-	seasonReportRaw.boxplot(column=['tEPPfP','tEPDHP','tEPDEP','tEPDOP'])
+	seasonReportRaw = seasonReportRaw.rename(columns={'tEPPfP':'tEPCP','tEPDHP':'tEPCDHP','tEPDEP':'tEPCDEP','tEPDOP':'tEPCOP'})
+
+	seasonReportRaw.boxplot(column=['tEPCP','tEPCDHP','tEPCDEP','tEPCOP'])
 
 	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400)
 	plt.clf()
@@ -388,7 +390,7 @@ def wins_tOP_graph(year):
 	plt.clf()
 
 if __name__ == '__main__':
-	year = "19-20"
+	year = "18-19"
 
 	wins_tEPC_graph(year)
 	wins_tEPCPP_graph(year)
@@ -396,6 +398,8 @@ if __name__ == '__main__':
 	wins_tDHP_graph(year)
 	wins_tDEP_graph(year)
 	wins_tOP_graph(year)
+
+	print("League figures created!")
 
 	for team in teamList.teamList:
 		allExpPoints_boxplot(year,team)
