@@ -147,6 +147,8 @@ with open(seasonReportWebLoc, 'w', newline='') as seasonReportWebFile:
     for row in section2:
         writer.writerow(row)
 
+    writer.writerow(["","","Points For","","Points Against","tPEN(#)","tPEN(yards)","tDHP(#)","tDHP(yards)","tEPDHP","tDEP(#)","tDEP(yards)","tEPDEP","tOP(#)","tOP(yards)","tEPDOP"])
+
     totalsRow = ["Totals", "PF", section1[4], "PA", section1[5]]
     totalsRow.extend(section3)
 
