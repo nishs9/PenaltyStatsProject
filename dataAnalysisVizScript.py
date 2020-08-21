@@ -21,7 +21,7 @@ def tPEN_tEPC_graph(year,team):
 	plotLegend.get_texts()[0].set_text('# of Penalties')
 	plotLegend.get_texts()[1].set_text('EPC due to Penalties')
 
-	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_tPENtEPPgraph.png",dpi=400)
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_tPENtEPPgraph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def allExpPoints_graph(year,team):
@@ -40,7 +40,7 @@ def allExpPoints_graph(year,team):
 	plotLegend.get_texts()[2].set_text('EPC due to DEPs')
 	plotLegend.get_texts()[3].set_text('EPC due to OPs')
 
-	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsgraph.png",dpi=400)
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsgraph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def allPenalties_graph(year,team):
@@ -58,7 +58,7 @@ def allPenalties_graph(year,team):
 	plotLegend.get_texts()[3].set_text('# of OPs')
 
 
-	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesgraph.png",dpi=400)
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesgraph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def allExpPoints_boxplot(year,team):
@@ -72,7 +72,7 @@ def allExpPoints_boxplot(year,team):
 
 	seasonReportRaw.boxplot(column=['tEPCP','tEPCDHP','tEPCDEP','tEPCOP'])
 
-	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400)
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def allPenalties_boxplot(year,team):
@@ -82,7 +82,7 @@ def allPenalties_boxplot(year,team):
 
 	seasonReportRaw.boxplot(column=['tPEN(#)','tDHP(#)','tDEP(#)','tOP(#)'])
 
-	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesboxplot.png",dpi=400)
+	plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allPenaltiesboxplot.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tEPC_graph(year):
@@ -132,7 +132,7 @@ def wins_tEPC_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "_Wins_vs_tEPP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tEPP_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tEPCPP_graph(year):
@@ -186,7 +186,7 @@ def wins_tEPCPP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "_Wins_vs_tEPCPP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tEPCPP_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tPEN_graph(year):
@@ -236,7 +236,7 @@ def wins_tPEN_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "_Wins_vs_tPEN_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tPEN_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tDHP_graph(year):
@@ -286,7 +286,7 @@ def wins_tDHP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "_Wins_vs_tDHP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "_Wins_vs_tDHP_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tDEP_graph(year):
@@ -336,7 +336,7 @@ def wins_tDEP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "Wins_vs_tDEP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "Wins_vs_tDEP_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 def wins_tOP_graph(year):
@@ -386,11 +386,11 @@ def wins_tOP_graph(year):
 	fig.subplots_adjust(bottom=0.3)
 	fig.text(0.1,0.15,"r-value: " + str(r_value))
 	fig.text(0.1,0.1,"r-squared value: " + str(r_value**2))
-	plt.savefig("Analysis/" + year + "Wins_vs_tOP_graph.png",dpi=400)
+	plt.savefig("Analysis/" + year + "Wins_vs_tOP_graph.png",dpi=400,bbox_inches="tight")
 	plt.clf()
 
 if __name__ == '__main__':
-	year = "18-19"
+	year = "19-20"
 
 	wins_tEPC_graph(year)
 	wins_tEPCPP_graph(year)

@@ -22,5 +22,5 @@ print(seasonReportRaw)
 
 seasonReportRaw.boxplot(column=['tEPCP','tEPCDHP','tEPCDEP','tEPCOP'])
 
-plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400)
+plt.savefig("Analysis/" + year + " " + team + "/" + team + "_allExpPointsboxplot.png",dpi=400,bbox_inches="tight")
 plt.clf()
