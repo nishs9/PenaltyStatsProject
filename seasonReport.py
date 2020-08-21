@@ -26,10 +26,12 @@ section4 = []
 
 for filename in os.listdir(directory):
     csvLoc = directory + "/" + filename
-    # if filename == team + "_Season.csv":
-    #     continue
-    # if filename == team + "_SeasonRaw.csv":
-    #     continue
+    if filename == team + "_Season.csv":
+        continue
+    if filename == team + "_SeasonRaw.csv":
+         continue
+    if filename == team + "_SeasonWeb.csv":
+        continue
     with open(csvLoc) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
@@ -105,6 +107,7 @@ for stat in section3:
 
 seasonReportLoc = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_Season.csv"
 seasonReportRawLoc = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_SeasonRaw.csv"
+seasonReportWebLoc = "C:/Users/" + location.location + "/Desktop/PenaltyStatsProject/Data/" + folder + "/" + team + "_SeasonWeb.csv"
 
 with open(seasonReportLoc, 'w', newline = '') as seasonReportFile:
     writer = csv.writer(seasonReportFile, delimiter=',')
@@ -138,11 +141,21 @@ with open(seasonReportRawLoc, 'w', newline = '') as seasonReportRawFile:
 
 print("Raw summary report created!")
 
-##print(section1)
+with open(seasonReportWebLoc, 'w', newline='') as seasonReportWebFile:
+    writer = csv.writer(seasonReportWebFile, delimiter=',')
+    writer.writerow(section2Header)
+    for row in section2:
+        writer.writerow(row)
 
-##for line in section2:
-##    print(line)
+    totalsRow = ["Totals", "PF", section1[4], "PA", section1[5]]
+    totalsRow.extend(section3)
 
-##print(section3)
+    writer.writerow(totalsRow)
 
-##print(section4)
+    averageRow = ["Averages", "PF", section1[4]/16, "PA", section1[5]/16]
+    averageRow.extend(section4)
+
+    writer.writerow(averageRow)
+
+print("Web-version of summary report created!")
+
