@@ -18,7 +18,7 @@ for year in years:
             seasonReportTxt.write("`;")
             seasonReportTxt.write("\n")
             seasonReportTxt.write("\n")
-            seasonReportTxt.write("export default text;")
+            seasonReportTxt.write("module.exports = {csv:function(){return text;}}")
 
             pre, ext = os.path.splitext(seasonReportTxtLoc)
 
