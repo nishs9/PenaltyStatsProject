@@ -502,7 +502,7 @@ def wins_tOP_graph(year):
 	plt.clf()
 
 if __name__ == '__main__':
-	year = "19-20"
+	year = "18-19"
 
 	wins_tEPC_graph(year)
 	wins_tEPCPP_graph(year)
@@ -514,8 +514,6 @@ if __name__ == '__main__':
 	print("League figures created!")
 
 	for team in teamList.teamList:
-		penaltySummary_table(year,team)
-
 		allExpPoints_boxplot(year,team)
 		allPenalties_boxplot(year,team)
 
@@ -525,3 +523,6 @@ if __name__ == '__main__':
 		tPEN_tEPC_graph(year,team)
 
 		print(team + "'s figures created!")
+
+	for team in teamList.teamList:
+		penaltySummary_table(year,team)
